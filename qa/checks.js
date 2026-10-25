@@ -73,6 +73,39 @@ export async function checkSite() {
         if (story.dataset.scene !== scene) scrollErrors.push('scroll scene ' + scene);
       }
     }
+    if (doc.documentElement.classList.contains('motion-enabled')) {
+      const section = doc.querySelector('.how-section');
+      const pinned = doc.querySelector('.journey-sticky');
+      const header = parseFloat(win.getComputedStyle(doc.documentElement).getPropertyValue('--header'));
+      const start = section.getBoundingClientRect().top + win.scrollY - header;
+      const distance = section.offsetHeight - pinned.offsetHeight;
+      if (win.getComputedStyle(pinned).position === 'sticky') {
+        win.eval('journeyManualAt = null; journeyAutoStep = -1');
+        for (const [progress, step] of [[0, '0'], [.5, '1'], [.95, '2'], [0, '0']]) {
+          win.scrollTo({top: start + distance * progress, behavior: 'instant'});
+          win.dispatchEvent(new win.Event('scroll'));
+          await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+          if (doc.querySelector('#journey-panel').dataset.step !== step) scrollErrors.push('journey scroll ' + step);
+        }
+        // A direct tab choice stays selected until scroll advances meaningfully.
+        doc.querySelector('#step-tab-2').click();
+        win.dispatchEvent(new win.Event('scroll'));
+        await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+        if (doc.querySelector('#journey-panel').dataset.step !== '2') scrollErrors.push('manual journey preserved');
+      }
+      for (const selector of ['.overview','.use-section','.brand-story','.developer-section']) {
+        const chapter = doc.querySelector(selector);
+        const y = chapter.getBoundingClientRect().top + win.scrollY;
+        const values = [];
+        for (const offset of [-win.innerHeight, 0]) {
+          win.scrollTo({top:y + offset, behavior:'instant'});
+          win.dispatchEvent(new win.Event('scroll'));
+          await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+          values.push(Number(chapter.style.getPropertyValue('--fx')));
+        }
+        if (!(values[1] > values[0])) scrollErrors.push('chapter animation ' + selector);
+      }
+    }
     results.push({width: 1440, lang: 'scroll', scrollWidth: doc.documentElement.scrollWidth, overflow: [], errors: scrollErrors});
     return {passed: results.every(result => !result.errors.length && !result.overflow.length && result.scrollWidth === result.width),results};
   } finally { frame.remove(); }

@@ -16,16 +16,16 @@ const translations = {
     "menuClose": "메뉴 닫기",
     "home": "Korean Privacy ID 홈",
     "status": "출시 준비 중",
-    "heroHeading": "모바일 신분증으로,\n필요한 사실만 증명하세요.",
-    "intro": "한국 모바일 신분증으로, 필요한 사실만.\n개인정보 보호의 새로운 방식을 준비합니다.",
+    "heroHeading": "개인정보 보호를 위한\n새로운 신원 인증",
+    "intro": "한국 모바일 신분증 기반의 프라이버시 인증 서비스.\n신원정보의 공개를 줄이고, 서비스에 필요한 조건을 증명합니다.",
     "learn": "서비스 알아보기",
     "contact": "기술 문의",
     "by": "Masse Labs가 만드는 프라이버시ID",
     "example": "화면 예시",
-    "exampleCaption": "이용 흐름을 설명하기 위한 콘셉트 화면입니다.",
+    "exampleCaption": "서비스 이용 과정을 보여주는 예시 화면입니다.",
     "appBrand": "프라이버시ID",
     "request": "확인 요청",
-    "requestDesc": "서비스에 전달할 내용을 확인하세요.",
+    "requestDesc": "요청한 조건과 제공할 정보를 확인합니다.",
     "checkItem": "확인 항목",
     "age": "만 18세 이상",
     "requester": "요청 서비스",
@@ -38,43 +38,43 @@ const translations = {
     "result": "확인 결과",
     "met": "조건 충족",
     "resultNote": "서비스에는 확인 결과만 전달",
-    "featuresTitle": "모든 정보 말고.\n필요한 답 하나.",
-    "featuresIntro": "무엇을 확인할지 선택해 보세요. 서비스에 전달할 증명 결과의 예시입니다.",
-    "feature1": "생년월일 대신, 성인 여부.",
-    "feature1Text": "생년월일 공개 없이 요청한 연령 기준을 충족하는지 증명하는 기능을 준비합니다.",
-    "feature2": "필요한 자격만, 정확하게.",
-    "feature2Text": "지역과 자격 조건을 필요한 범위에서 확인하도록 준비합니다. 지원 범위는 출시 시 안내합니다.",
-    "feature3": "나의 정보는, 나의 영역에.",
-    "feature3Text": "서비스에 제공하는 정보를 요청된 증명 결과 중심으로 제한하도록 설계합니다.",
-    "howTitle": "복잡한 기술은 뒤로.\n경험은 간결하게.",
-    "howIntro": "출시 후 제공할 예정인 이용 흐름입니다.",
-    "step1": "증명 요청",
-    "step1Text": "서비스에서 확인하려는 조건을 요청합니다.",
-    "step2": "모바일 신분증 연계",
-    "step2Text": "앱에서 요청 내용을 확인하고 모바일 신분증을 이용해 증명을 생성합니다.",
-    "step3": "결과 확인",
-    "step3Text": "서비스가 증명을 검증하고 필요한 조건의 충족 여부를 확인합니다.",
+    "featuresTitle": "확인할 조건에 따라\n공개 범위를 최소화합니다",
+    "featuresIntro": "연령부터 이용 자격까지. 신분증의 전체 정보가 아닌, 서비스에서 확인해야 할 조건을 증명합니다.",
+    "feature1": "연령 확인",
+    "feature1Text": "생년월일을 공개하지 않고 연령 기준 충족 여부를 확인합니다.",
+    "feature2": "자격 확인",
+    "feature2Text": "서비스 이용에 필요한 지역·자격 조건을 확인합니다.",
+    "feature3": "정보 공개 최소화",
+    "feature3Text": "서비스에 제공하는 정보를 요청한 조건의 증명 결과로 제한합니다.",
+    "howTitle": "모바일 신분증에서\n서비스 인증까지",
+    "howIntro": "개발 중인 서비스의 이용 예시입니다.",
+    "step1": "요청 내용 확인",
+    "step1Text": "서비스에서 요청한 인증 조건과 제공할 정보를 확인합니다.",
+    "step2": "모바일 신분증으로 증명",
+    "step2Text": "모바일 신분증의 정보를 바탕으로 요청한 조건에 대한 증명을 생성합니다.",
+    "step3": "서비스에서 검증",
+    "step3Text": "서비스는 전달받은 증명으로 조건 충족 여부를 확인합니다.",
     "service": "이용 서비스",
     "userApp": "사용자 앱",
     "verification": "서비스의 검증",
-    "usesTitle": "한국에서 시작해.\n경계 너머로.",
-    "usesIntro": "한국 모바일 신분증 기반의 증명을 국내외 서비스에서 활용할 수 있도록 설계하고 있습니다.",
-    "usesNote": "해당 서비스가 증명 방식과 자격을 수용하는 경우에 이용할 수 있습니다.",
-    "use1": "성인 인증",
-    "use1Text": "생년월일 대신 성인 여부 확인",
+    "usesTitle": "국내외 서비스를 잇는\n새로운 인증 방식",
+    "usesIntro": "한국 모바일 신분증을 기반으로 온라인 서비스, 커뮤니티 등 다양한 환경에서 활용할 수 있는 인증을 준비합니다.",
+    "usesNote": "이용 가능 여부는 각 서비스의 증명 방식 및 자격 기준 수용 여부에 따라 달라집니다.",
+    "use1": "연령 확인",
+    "use1Text": "요청한 연령 기준 충족 여부 확인",
     "use2": "연령 제한 서비스",
     "use2Text": "서비스가 정한 연령 기준 확인",
-    "use3": "온라인 서비스 이용 자격",
+    "use3": "온라인 서비스 가입",
     "use3Text": "가입·이용에 필요한 조건 확인",
-    "use4": "Web3 및 커뮤니티 참여",
+    "use4": "Web3·커뮤니티",
     "use4Text": "참여에 필요한 자격 조건 확인",
-    "use5": "외부 자격 검증 시스템",
+    "use5": "외부 자격 검증",
     "use5Text": "외부 서비스와 증명 결과 연계",
-    "passportNote": "Human Passport와 같은 외부 자격 검증 생태계는 활용 방향의 예시이며, 현재 공식 연동 관계를 의미하지 않습니다.",
-    "devTitle": "다음 인증 경험을,\n함께 만듭니다.",
-    "devIntro": "한국 모바일 신분증 기반의 증명을 검증하는 개발자 통합 인터페이스를 준비하고 있습니다.",
-    "techTitle": "필요한 조건을 검증하는 기술",
-    "techText": "ZKProofport의 영지식증명(Zero-Knowledge Proof) 기술을 기반으로, 원본 개인정보 공개를 줄이면서 요청된 조건을 검증하도록 설계합니다.",
+    "passportNote": "Human Passport는 활용 가능한 외부 생태계의 예시입니다. 현재 공식 연동 또는 제휴 관계는 없습니다.",
+    "devTitle": "개인정보 보호를\n서비스의 기본으로",
+    "devIntro": "모바일 신분증 기반 증명을 서비스에 연결할 수 있도록 SDK와 검증 API를 준비하고 있습니다.",
+    "techTitle": "영지식증명 기반 검증",
+    "techText": "ZKProofport의 영지식증명 기술을 활용합니다. 원본 신원정보의 공개를 최소화하면서 서비스가 요청한 조건을 검증하는 구조입니다.",
     "docs": "개발자 문서",
     "api": "API 문서",
     "soon": "준비 중",
@@ -82,13 +82,13 @@ const translations = {
     "devNote": "SDK, API 및 개발자 문서는 아직 제공되지 않습니다.",
     "faqTitle": "자주 묻는 질문",
     "q1": "어떤 신분증을 사용할 수 있나요?",
-    "a1": "한국 모바일 신분증 연계를 준비하고 있습니다. 지원 신분증 종류와 이용 조건은 출시 시 안내합니다.",
-    "q2": "개인정보를 모두 제출해야 하나요?",
-    "a2": "이름이나 생년월일 대신 요청된 조건의 충족 여부를 전달하도록 설계합니다. 실제 제공 정보와 처리 범위는 출시 시 안내합니다.",
+    "a1": "한국 모바일 신분증과의 연동을 준비하고 있습니다. 지원하는 신분증 종류와 이용 조건은 출시 시 안내합니다.",
+    "q2": "어떤 개인정보가 서비스에 전달되나요?",
+    "a2": "서비스가 요청한 조건의 충족 여부를 전달하는 방식으로 개발하고 있습니다. 구체적인 제공 항목과 개인정보 처리 범위는 출시 시 안내합니다.",
     "q3": "해외 서비스에서도 사용할 수 있나요?",
-    "a3": "해외 서비스에서도 활용할 수 있도록 설계하고 있습니다. 해당 서비스가 이 증명 방식과 자격을 수용해야 하며, 국가별 법적 효력을 보장하지 않습니다.",
+    "a3": "해외 서비스와의 연동을 고려해 개발하고 있습니다. 실제 이용 여부는 각 서비스의 지원 범위에 따라 달라지며, 국가별 법적 효력을 보장하지는 않습니다.",
     "q4": "일반 모바일 신분증 앱과 어떤 차이가 있나요?",
-    "a4": "신분증을 발급하는 앱이 아니라, 모바일 신분증을 활용해 필요한 조건을 증명하는 독립 서비스입니다.",
+    "a4": "모바일 신분증의 정보를 바탕으로 서비스에 필요한 조건을 증명합니다. 신분증을 발급하는 정부 공식 앱과는 별개의 서비스입니다.",
     "operator": "개발 및 운영:",
     "support": "제품 지원",
     "policy": "개인정보처리방침 · 준비 중",
@@ -97,37 +97,45 @@ const translations = {
     "independent": "Korean Privacy ID는 Masse Labs가 개발·운영하는 독립 서비스이며, 정부의 공식 신분증 발급 앱이 아닙니다.",
     "footerNav": "서비스 관련 링크",
     "title": "Korean Privacy ID | 프라이버시ID",
-    "description": "한국 모바일 신분증으로 이름이나 생년월일 대신 필요한 조건을 증명하는 프라이버시ID. Masse Labs가 출시를 준비하고 있습니다.",
+    "description": "한국 모바일 신분증 기반의 프라이버시 인증 서비스. 개인정보 공개를 최소화하는 Korean Privacy ID를 Masse Labs에서 개발하고 있습니다.",
     "languageChanged": "한국어로 변경되었습니다.",
-    "privateLabel": "개인정보는 비공개",
-    "proofOnly": "필요한 사실 하나만.",
-    "heroLine1": "나를 드러내지 않고.",
-    "heroLine2": "나를 증명하다.",
-    "storyEndLabel": "공개하는 것은 줄이고",
-    "storyEndTitle": "필요한 사실만, 남기다.",
-    "storyEndText": "이름과 생년월일 대신, 요청된 조건의 충족 여부를 전달하도록 설계합니다.",
-    "scrollHint": "스크롤하며 알아보기",
-    "sceneNav": "이야기 장면 선택",
-    "scene1": "나의 정보",
-    "scene2": "공개 최소화",
-    "scene3": "필요한 사실",
-    "conceptShort": "이용 흐름 콘셉트",
+    "privateLabel": "원본 정보 비공개",
+    "proofOnly": "조건 충족 여부만 전달",
+    "heroLine1": "개인정보 보호를 위한",
+    "heroLine2": "새로운 신원 인증",
+    "storyEndLabel": "SELECTIVE DISCLOSURE",
+    "storyEndTitle": "인증에 필요한 결과만",
+    "storyEndText": "이름이나 생년월일을 전달하는 대신, 요청한 조건을 충족하는지 증명합니다.",
+    "scrollHint": "스크롤하여 살펴보기",
+    "sceneNav": "인증 과정 살펴보기",
+    "scene1": "신원정보",
+    "scene2": "정보 보호",
+    "scene3": "증명 결과",
+    "conceptShort": "서비스 이용 예시",
     "proofTabs": "증명 예시 선택",
     "proofAge": "연령",
     "proofRegion": "지역",
     "proofEligibility": "자격",
-    "proofAgeTitle": "생년월일 대신, 연령 조건.",
-    "proofAgeText": "요청한 연령 기준을 충족하는지만 증명하는 기능을 준비합니다.",
-    "proofRegionTitle": "주소 대신, 지역 조건.",
-    "proofRegionText": "서비스가 요청한 지역 조건을 필요한 범위에서 증명하도록 준비합니다.",
-    "proofEligibilityTitle": "신분 정보 대신, 이용 자격.",
-    "proofEligibilityText": "가입이나 참여에 필요한 자격을 충족하는지 확인하도록 설계합니다.",
-    "explorerNote": "설명용 예시이며 실제 인증이 아닙니다. 지원 신분증과 증명 범위는 출시 시 안내합니다.",
+    "proofAgeTitle": "연령 기준 충족 여부",
+    "proofAgeText": "생년월일을 전달하지 않고, 서비스가 정한 연령 기준을 충족하는지 증명합니다.",
+    "proofRegionTitle": "지역 조건 충족 여부",
+    "proofRegionText": "상세 주소 대신, 서비스에서 요구하는 지역 조건의 충족 여부를 증명합니다.",
+    "proofEligibilityTitle": "서비스 이용 자격",
+    "proofEligibilityText": "가입이나 참여에 필요한 자격 조건을 충족하는지 증명합니다.",
+    "explorerNote": "설명용 예시입니다. 지원 신분증과 증명 항목은 출시 시 확정하여 안내합니다.",
     "journeyTabs": "이용 단계 선택",
-    "generateCaption": "요청을 확인한 뒤, 필요한 조건에 대한 증명을 생성합니다.",
-    "markLabel": "하나의 심벌, 두 가지 약속",
-    "markTitle": "지키는 방패.\n증명하는 체크.",
-    "markText": "바깥의 방패는 개인정보를 보호하는 경계. 안쪽의 체크는 그 경계를 넘어 전달되는 증명 결과. 붉은색과 푸른색에 한국에서 시작하는 정체성을 담았습니다."
+    "generateCaption": "모바일 신분증을 기반으로 요청한 조건에 대한 증명을 생성합니다.",
+    "markLabel": "PRIVACY BY DESIGN",
+    "markTitle": "개인정보 보호,\n인증의 설계부터",
+    "markText": "확인에 필요한 정보와 공개할 정보를 구분합니다. 개인정보 공개를 최소화하는 원칙을 인증 과정 전반에 적용합니다.",
+    "mobileID": "모바일 신분증",
+    "cardSample": "설명용 예시",
+    "cardCaption": "모바일 신분증을 재구성한 예시 이미지",
+    "flowLabel": "인증 요청부터 검증까지",
+    "protocolLabel": "서비스 연동 구조",
+    "protocolRequest": "조건 요청",
+    "protocolProof": "증명 생성",
+    "protocolVerify": "결과 검증"
   },
   "en": {
     "skip": "Skip to content",
@@ -144,7 +152,7 @@ const translations = {
     "home": "Korean Privacy ID home",
     "status": "In development",
     "heroHeading": "Verify eligibility without\nrevealing your identity.",
-    "intro": "Prove only what’s needed with Korean Mobile ID.\nA new approach to privacy, in development.",
+    "intro": "Privacy-preserving verification built on Korean Mobile ID.\nProve service requirements while limiting disclosure.",
     "learn": "How it works",
     "contact": "Technical inquiries",
     "by": "A product in development by Masse Labs",
@@ -165,7 +173,7 @@ const translations = {
     "result": "Verification result",
     "met": "Requirement met",
     "resultNote": "Only the result is shared with the service",
-    "featuresTitle": "Not every detail.\nJust the answer.",
+    "featuresTitle": "Verify the requirement.\nLimit the disclosure.",
     "featuresIntro": "Choose a requirement. Explore the proof result a service would receive.",
     "feature1": "Your age. Not your birthday.",
     "feature1Text": "We’re developing a way to prove an age requirement is met without revealing a date of birth.",
@@ -173,7 +181,7 @@ const translations = {
     "feature2Text": "Location and eligibility checks, limited to what’s needed. Supported requirements will be announced at launch.",
     "feature3": "Your details. Yours to keep.",
     "feature3Text": "Designed to limit the information a service receives to the results of the requested checks.",
-    "howTitle": "Complex technology.\nSimple experience.",
+    "howTitle": "From mobile identity\nto service verification.",
     "howIntro": "The planned experience, once the service launches.",
     "step1": "Request a proof",
     "step1Text": "A service requests proof of the condition it needs to verify.",
@@ -228,8 +236,8 @@ const translations = {
     "languageChanged": "Language changed to English.",
     "privateLabel": "Personal details stay private",
     "proofOnly": "Just the fact that matters.",
-    "heroLine1": "Your identity.",
-    "heroLine2": "Only yours.",
+    "heroLine1": "Identity verification.",
+    "heroLine2": "Privacy by design.",
     "storyEndLabel": "LESS TO REVEAL",
     "storyEndTitle": "Only the fact remains.",
     "storyEndText": "Designed to share whether a requirement is met, instead of your name or date of birth.",
@@ -252,9 +260,17 @@ const translations = {
     "explorerNote": "An illustration, not live verification. Supported IDs and proof types will be announced at launch.",
     "journeyTabs": "Choose a step",
     "generateCaption": "Review the request, then create a proof of the required condition.",
-    "markLabel": "ONE SYMBOL. TWO PROMISES.",
-    "markTitle": "A shield to protect.\nA check to prove.",
-    "markText": "The shield defines a boundary around personal information. The check represents the proof that crosses it. Red and blue express our Korean roots."
+    "markLabel": "PRIVACY BY DESIGN",
+    "markTitle": "Privacy, built into\nevery verification.",
+    "markText": "Distinguish what needs to be verified from what needs to be shared. Minimize personal information disclosure throughout the verification process.",
+    "mobileID": "Mobile identity",
+    "cardSample": "Illustrative sample",
+    "cardCaption": "Illustrative mobile identity card",
+    "flowLabel": "From request to verification",
+    "protocolLabel": "Service integration flow",
+    "protocolRequest": "Request",
+    "protocolProof": "Prove",
+    "protocolVerify": "Verify"
   }
 };
 const storageKey = "korean-privacy-id-language";
@@ -309,6 +325,9 @@ desktop.addEventListener("change", event => { if (event.matches) closeMenu(); })
 setLanguage(language);
 
 // Explanatory controls only. They do not authenticate, collect or transmit data.
+let journeyManualAt = null;
+let journeyProgress = 0;
+let journeyAutoStep = -1;
 const proofExamples = {
   age: {title: 'proofAgeTitle', description: 'proofAgeText', glyph: '18', suffix: '+'},
   region: {title: 'proofRegionTitle', description: 'proofRegionText', glyph: 'KR', suffix: ''},
@@ -343,7 +362,8 @@ function selectProof(key) {
   void panel.offsetWidth;
   panel.classList.add('is-switching');
 }
-function selectStep(index) {
+function selectStep(index, source = "manual") {
+  if (source === "manual") { journeyManualAt = journeyProgress; journeyAutoStep = -1; }
   if (index < 0 || index > 2) return;
   const panel = document.querySelector('#journey-panel');
   panel.dataset.step = String(index);
@@ -390,6 +410,7 @@ const ramp = (value, start, end) => clamp((value - start) / (end - start));
 function renderStory() {
   scrollQueued = false;
   if (!motionActive) return;
+  renderChapters();
   const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header'));
   const rect = story.getBoundingClientRect();
   const progress = clamp((top - rect.top) / Math.max(1, story.offsetHeight - sticky.offsetHeight));
@@ -428,6 +449,8 @@ function configureMotion() {
     renderStory();
   } else {
     document.querySelectorAll('.reveal').forEach(element => element.classList.add('is-visible'));
+    document.querySelectorAll('.overview,.how-section,.use-section,.brand-story,.developer-section').forEach(section => { section.style.removeProperty('--fx'); section.style.removeProperty('--journey-progress'); });
+    journeyManualAt = null;
     story.removeAttribute('style');
     story.dataset.scene = '0';
     sceneButtons.forEach((button, index) => button.setAttribute('aria-pressed', String(index === 0)));
@@ -444,3 +467,27 @@ window.addEventListener('resize', queueStory, {passive: true});
 motionPreference.addEventListener('change', configureMotion);
 motionViewport.addEventListener('change', configureMotion);
 configureMotion();
+
+// One animation frame updates all visible chapters. Effects are tied to native
+// scroll position, reversible, and disabled with the user's motion preference.
+function renderChapters() {
+  const viewport = window.innerHeight;
+  document.querySelectorAll('.overview,.how-section,.use-section,.brand-story,.developer-section').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const progress = clamp((viewport * .88 - rect.top) / (rect.height * .48 + viewport * .16));
+    section.style.setProperty('--fx', progress.toFixed(4));
+  });
+  const journey = document.querySelector('.how-section');
+  const pinned = journey.querySelector('.journey-sticky');
+  if (getComputedStyle(pinned).position !== 'sticky') return;
+  const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header'));
+  journeyProgress = clamp((header - journey.getBoundingClientRect().top) / Math.max(1, journey.offsetHeight - pinned.offsetHeight));
+  journey.style.setProperty('--journey-progress', journeyProgress.toFixed(4));
+  const nextStep = Math.min(2, Math.floor(journeyProgress * 3));
+  if (journeyManualAt !== null && Math.abs(journeyProgress - journeyManualAt) < .12) return;
+  journeyManualAt = null;
+  if (nextStep !== journeyAutoStep) {
+    journeyAutoStep = nextStep;
+    selectStep(nextStep, 'scroll');
+  }
+}
