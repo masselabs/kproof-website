@@ -37,6 +37,20 @@ export async function checkSite() {
           doc.dispatchEvent(new KeyboardEvent('keydown', {key:'Escape'}));
           if (toggle.getAttribute('aria-expanded') !== 'false') errors.push('menu escape');
         }
+        // Verify explanatory tabs, keyboard navigation, and translation after a state change.
+        doc.querySelector('#tab-region').click();
+        if (doc.querySelector('#result-display').textContent !== 'KR' || doc.querySelector('#proof-panel').getAttribute('aria-labelledby') !== 'tab-region') errors.push('region example');
+        doc.querySelector('#tab-region').dispatchEvent(new win.KeyboardEvent('keydown', {key: 'ArrowRight', bubbles: true}));
+        if (doc.querySelector('#tab-eligibility').getAttribute('aria-selected') !== 'true') errors.push('proof keyboard');
+        win.setLanguage(lang);
+        if (doc.querySelector('#proof-title').dataset.i18n !== 'proofEligibilityTitle' || doc.querySelector('#proof-title').textContent !== win.eval('translations')[lang].proofEligibilityTitle) errors.push('selected proof translation');
+        doc.querySelector('#tab-age').click();
+        for (let step = 0; step < 3; step++) {
+          doc.querySelector('#step-tab-' + step).click();
+          if (doc.querySelectorAll('[data-step-screen]:not([hidden])').length !== 1 || doc.querySelector('[data-step-screen="' + step + '"]').hidden) errors.push('journey step ' + step);
+        }
+        doc.querySelector('#step-tab-2').dispatchEvent(new win.KeyboardEvent('keydown', {key: 'Home', bubbles: true}));
+        if (doc.querySelector('#step-tab-0').getAttribute('aria-selected') !== 'true') errors.push('journey keyboard');
         const summary = doc.querySelector('summary');
         summary.click();
         if (!summary.parentElement.open) errors.push('FAQ opening');
@@ -45,6 +59,21 @@ export async function checkSite() {
         results.push({width,lang,scrollWidth:doc.documentElement.scrollWidth,overflow,errors});
       }
     }
+    // Native scroll must scrub in both directions without locking the document.
+    const story = doc.querySelector('.story');
+    const scrollErrors = [];
+    if (doc.documentElement.classList.contains('motion-enabled')) {
+      const header = parseFloat(win.getComputedStyle(doc.documentElement).getPropertyValue('--header'));
+      const start = story.getBoundingClientRect().top + win.scrollY - header;
+      const distance = story.offsetHeight - doc.querySelector('.story-sticky').offsetHeight;
+      for (const [progress, scene] of [[0, '0'], [.47, '1'], [.96, '2'], [0, '0']]) {
+        win.scrollTo({top: start + distance * progress, behavior: 'instant'});
+        win.dispatchEvent(new win.Event('scroll'));
+        await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+        if (story.dataset.scene !== scene) scrollErrors.push('scroll scene ' + scene);
+      }
+    }
+    results.push({width: 1440, lang: 'scroll', scrollWidth: doc.documentElement.scrollWidth, overflow: [], errors: scrollErrors});
     return {passed: results.every(result => !result.errors.length && !result.overflow.length && result.scrollWidth === result.width),results};
   } finally { frame.remove(); }
 }
