@@ -1,5 +1,13 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Typography hierarchy and readability, 2026-10-25
+
+- Added a shared typography scale with smaller display headings, larger lead/body copy, more legible supporting text and stronger emphasis for result labels, journey steps and actions. Adjusted paragraph widths, spacing and app-preview height with the text sizes.
+- Source checks, Git whitespace checks and all 11 existing browser check groups passed: five viewport widths (360, 390, 768, 1024, 1440px), KO/EN, controls and scroll effects.
+- At each width in both languages, all three app-preview states fit their frame and the hero introduction cleared the identity card (850px viewport height). No clipping or collision was found.
+- Inspected Chrome screenshots of desktop hero, overview, journey, use cases and developers; Korean mobile hero, overview and brand section; English 360px hero and 390px journey. Reduced-motion emulation still disables the brand-mark transform.
+- This change affects presentation only; product copy, logo geometry and authentication behavior are unchanged.
+
 ## Selected iD logo integration, 2026-10-25
 
 - Replaced the P mark with the approved D enclosing an i in all five image placements, the inline brand-story mark, and favicon. Dark surfaces use the white/red version; the favicon follows the browser color scheme.
