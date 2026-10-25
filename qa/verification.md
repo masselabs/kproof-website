@@ -1,5 +1,14 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Selected iD logo integration, 2026-10-25
+
+- Replaced the P mark with the approved D enclosing an i in all five image placements, the inline brand-story mark, and favicon. Dark surfaces use the white/red version; the favicon follows the browser color scheme.
+- Source checks and Git whitespace checks passed. Existing browser checks passed all 11 groups, including KO/EN at 360, 390, 768, 1024 and 1440px and forward/reverse scroll effects.
+- All logo images loaded and retained their 6:7 aspect ratio. Reviewed Chrome captures of the 1440px brand section and 390px mobile header. Reduced-motion emulation produced no transform on the brand mark.
+- Browser capture used local Chrome via CDP because the connected Chrome and in-app browser surfaces were unavailable. No hosting or domain changes were made.
+
+## Previous copy, identity and motion verification
+
 - Source checks passed: 133 matching KO/EN keys, anchors, assets, external links, pending URLs, document structure and font license. JavaScript syntax and Git whitespace checks passed.
 - Chrome executed the expanded qa/checks.js: 11 result groups passed. Responsive checks cover 360, 390, 768, 1024 and 1440px in Korean and English, with no horizontal overflow.
 - Menu/Escape, FAQ, proof tabs and keyboard navigation, translated selected states, and journey tabs all passed.
