@@ -1,5 +1,13 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Ambient red/blue curves, 2026-10-25
+
+- Added decorative backgrounds to eight areas: hero, overview, journey, use cases, brand, developers, FAQ and footer. Each uses local SVG curves with CSS transform animations behind the content.
+- Source, JavaScript syntax and whitespace checks passed. All 11 existing browser check groups passed, including KO/EN at five widths, controls and scroll effects.
+- Chrome confirmed changing transforms for the visible hero background, paused animation for all seven offscreen fields, and pointer-events:none for every field. Reduced-motion emulation disabled both animations on all fields.
+- Reviewed desktop hero, overview, journey, use cases and developer screens, plus Korean and English mobile screens. Adjusted mobile background positions after the first capture and lowered the curve opacity behind left-aligned text; rechecked those views and the animation lifecycle.
+- No dependencies, external assets or per-frame animation JavaScript were added.
+
 ## Typography hierarchy and readability, 2026-10-25
 
 - Added a shared typography scale with smaller display headings, larger lead/body copy, more legible supporting text and stronger emphasis for result labels, journey steps and actions. Adjusted paragraph widths, spacing and app-preview height with the text sizes.

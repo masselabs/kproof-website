@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="red" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#CD2E3A" stop-opacity="0"/>
+      <stop offset=".3" stop-color="#CD2E3A"/>
+      <stop offset=".7" stop-color="#E35A66"/>
+      <stop offset="1" stop-color="#CD2E3A" stop-opacity="0"/>
+    </linearGradient>
+    <path id="curve" d="M-220 600C85 700 500 450 370 190C230-90 830-100 1190 60"/>
+  </defs>
+  <g fill="none" stroke="url(#red)">
+    <use href="#curve" stroke-width="78" opacity=".07"/>
+    <use href="#curve" stroke-width="32" opacity=".17"/>
+    <use href="#curve" stroke-width="1.4" opacity=".55"/>
+  </g>
+</svg>

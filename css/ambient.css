@@ -1,0 +1,73 @@
+/* Slow red/blue curves, always behind the content and outside hit testing. */
+[data-ambient] {
+  isolation: isolate;
+  --ambient-strength: .56;
+  --ambient-direction: 1;
+  --ambient-red-phase: -7s;
+  --ambient-blue-phase: -19s;
+}
+.overview, .brand-story, .developer-section, .faq-section, .site-footer {position: relative;}
+[data-ambient="dark"] {--ambient-strength: 1;}
+[data-ambient="soft"] {--ambient-strength: .42;}
+.overview {--ambient-direction: -1; --ambient-red-phase: -21s; --ambient-blue-phase: -5s;}
+.journey-sticky {--ambient-red-phase: -12s; --ambient-blue-phase: -28s;}
+.use-section {--ambient-direction: -1; --ambient-strength: .75;}
+.brand-story {--ambient-red-phase: -25s; --ambient-blue-phase: -11s;}
+.developer-section {--ambient-red-phase: -18s; --ambient-blue-phase: -30s;}
+.site-footer {--ambient-direction: -1;}
+.ambient-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  contain: paint;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--ambient-strength);
+  mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent);
+}
+.journey-sticky>.ambient-field, .faq-section>.ambient-field {
+  left: calc((100% - 100vw) / 2);
+  right: calc((100% - 100vw) / 2);
+}
+.ambient-field::before, .ambient-field::after {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center;
+  animation-play-state: paused;
+}
+.ambient-field::before {
+  background-image: url('../assets/ambient-red.svg');
+  animation: ambient-red-drift 30s ease-in-out var(--ambient-red-phase) infinite paused;
+}
+.ambient-field::after {
+  background-image: url('../assets/ambient-blue.svg');
+  animation: ambient-blue-drift 38s ease-in-out var(--ambient-blue-phase) infinite paused;
+}
+.overview .ambient-field::after, .journey-sticky .ambient-field::before {opacity: .55;}
+.developer-section .ambient-field::before {opacity: .35;}
+.ambient-field.is-active::before, .ambient-field.is-active::after {animation-play-state: running;}
+.page-hidden .ambient-field::before, .page-hidden .ambient-field::after {animation-play-state: paused;}
+@keyframes ambient-red-drift {
+  0%, 100% {transform: translate(-2%, 1%) rotate(-3deg) scaleX(var(--ambient-direction));}
+  50% {transform: translate(3%, -3%) rotate(4deg) scaleX(var(--ambient-direction));}
+}
+@keyframes ambient-blue-drift {
+  0%, 100% {transform: translate(2%, -2%) rotate(3deg) scaleX(var(--ambient-direction));}
+  50% {transform: translate(-3%, 3%) rotate(-4deg) scaleX(var(--ambient-direction));}
+}
+@media (max-width: 600px) {
+  [data-ambient] {--ambient-strength: .46;}
+  [data-ambient="dark"] {--ambient-strength: .8;}
+  [data-ambient="soft"] {--ambient-strength: .34;}
+  .ambient-field::before, .ambient-field::after {background-size: 185% 100%;}
+  .ambient-field::before {background-position: 35% center;}
+  .ambient-field::after {background-position: 80% center;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-field::before, .ambient-field::after {animation: none; transform: scaleX(var(--ambient-direction));}
+}
+@media print {.ambient-field {display: none;}}

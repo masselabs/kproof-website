@@ -491,3 +491,18 @@ function renderChapters() {
     selectStep(nextStep, 'scroll');
   }
 }
+
+// Decorative curves animate in CSS; no extra per-frame JavaScript work.
+// Offscreen chapters and hidden tabs keep their current animation phase.
+const ambientFields = document.querySelectorAll('.ambient-field');
+if ('IntersectionObserver' in window) {
+  const ambientObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.classList.toggle('is-active', entry.isIntersecting));
+  }, {rootMargin: '120px 0px'});
+  ambientFields.forEach(field => ambientObserver.observe(field));
+}
+function syncAmbientVisibility() {
+  document.documentElement.classList.toggle('page-hidden', document.hidden);
+}
+document.addEventListener('visibilitychange', syncAmbientVisibility);
+syncAmbientVisibility();
