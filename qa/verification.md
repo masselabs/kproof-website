@@ -1,5 +1,13 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Selected KPID wordmark integration, 2026-10-26
+
+- Applied the approved first wordmark to all five image placements and the inline brand-story SVG. Both external SVGs match the selected source files exactly; the inline paths match the same geometry. The favicon uses the selected wordmark's i at a legible square-icon scale.
+- Updated KO/EN product names, accessible labels and metadata to KPID, retaining Korean Privacy ID as the expanded name. Removed redundant text beside the header, footer and app-preview wordmarks.
+- Added proportional desktop/mobile sizes and bounded the wider animated route badge within its track. Kept the existing brand-dot animation and reduced-motion rules.
+- Passed the existing source check (133 matching bilingual keys, assets, anchors and semantics), JavaScript syntax and Git whitespace checks. Parsed all three SVG assets and checked intrinsic dimensions across all five image placements. Local HTTP preview returned 200.
+- Browser verification is incomplete: native Chrome reloaded the updated page title, but the browser connector failed and native interaction was interrupted by user activity. A separate Safari attempt timed out. The full responsive suite and updated page screenshots were not completed; the earlier browser results below do not certify this change. Removed the temporary review page and stopped the owned preview server.
+
 ## More dynamic curve motion, 2026-10-26
 
 - Shortened red/blue cycles from 30/38s to 18/23s. Added intermediate travel positions, increased translation/rotation, and subtle nonuniform scaling. Loop endpoints match for seamless repetition.
