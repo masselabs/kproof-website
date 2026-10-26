@@ -309,6 +309,8 @@ function setLanguage(next, announce = false) {
     try { localStorage.setItem(storageKey, language); } catch { /* The current page still switches without persistence. */ }
     document.querySelector("#language-status").textContent = copy.languageChanged;
   }
+  // Translation can reflow the illustration before the next scroll event.
+  requestAnimationFrame(queueStory);
 }
 document.querySelectorAll("[data-lang]").forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang, true)));
 menu.addEventListener("click", () => {
@@ -407,6 +409,32 @@ let scrollQueued = false;
 let revealObserver;
 const clamp = value => Math.max(0, Math.min(1, value));
 const ramp = (value, start, end) => clamp((value - start) / (end - start));
+// Start from the illustration's own visible center, not its chapter heading.
+function viewportProgress(rect, viewport, start = .72, end = .36) {
+  const center = rect.top + rect.height / 2;
+  return clamp((viewport * start - center) / (viewport * (start - end)));
+}
+const motionDetails = {
+  route: document.querySelector('.world-route'),
+  proof: document.querySelector('.proof-panel'),
+  mark: document.querySelector('.principle-mark'),
+  flow: document.querySelector('.protocol-flow')
+};
+function renderDetails(viewport) {
+  const route = viewportProgress(motionDetails.route.getBoundingClientRect(), viewport, .68, .32);
+  motionDetails.route.style.setProperty('--route', route.toFixed(4));
+  document.querySelector('.use-pills').style.setProperty('--cases', route.toFixed(4));
+  const proof = viewportProgress(motionDetails.proof.getBoundingClientRect(), viewport, .80, .44);
+  document.querySelector('.proof-panel').style.setProperty('--proof', proof.toFixed(4));
+  const mark = viewportProgress(motionDetails.mark.parentElement.getBoundingClientRect(), viewport, .80, .44);
+  for (let index = 0; index < 4; index++) {
+    motionDetails.mark.style.setProperty(`--letter-${index}`, ramp(mark, index * .13, .55 + index * .13).toFixed(4));
+  }
+  const flow = viewportProgress(motionDetails.flow.getBoundingClientRect(), viewport, .76, .38);
+  motionDetails.flow.style.setProperty('--flow-in', ramp(flow, 0, .40).toFixed(4));
+  motionDetails.flow.style.setProperty('--flow-node', ramp(flow, .30, .65).toFixed(4));
+  motionDetails.flow.style.setProperty('--flow-out', ramp(flow, .60, 1).toFixed(4));
+}
 function renderStory() {
   scrollQueued = false;
   if (!motionActive) return;
@@ -450,6 +478,11 @@ function configureMotion() {
   } else {
     document.querySelectorAll('.reveal').forEach(element => element.classList.add('is-visible'));
     document.querySelectorAll('.overview,.how-section,.use-section,.brand-story,.developer-section').forEach(section => { section.style.removeProperty('--fx'); section.style.removeProperty('--journey-progress'); });
+    motionDetails.route.style.removeProperty('--route');
+    document.querySelector('.use-pills').style.removeProperty('--cases');
+    document.querySelector('.proof-panel').style.removeProperty('--proof');
+    for (let index = 0; index < 4; index++) motionDetails.mark.style.removeProperty(`--letter-${index}`);
+    ['--flow-in', '--flow-node', '--flow-out'].forEach(name => motionDetails.flow.style.removeProperty(name));
     journeyManualAt = null;
     story.removeAttribute('style');
     story.dataset.scene = '0';
@@ -467,11 +500,13 @@ window.addEventListener('resize', queueStory, {passive: true});
 motionPreference.addEventListener('change', configureMotion);
 motionViewport.addEventListener('change', configureMotion);
 configureMotion();
+document.fonts.ready.then(queueStory);
 
 // One animation frame updates all visible chapters. Effects are tied to native
 // scroll position, reversible, and disabled with the user's motion preference.
 function renderChapters() {
   const viewport = window.innerHeight;
+  renderDetails(viewport);
   document.querySelectorAll('.overview,.how-section,.use-section,.brand-story,.developer-section').forEach(section => {
     const rect = section.getBoundingClientRect();
     const progress = clamp((viewport * .88 - rect.top) / (rect.height * .48 + viewport * .16));

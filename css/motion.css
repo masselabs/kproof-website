@@ -1,0 +1,86 @@
+/* Local, reversible sequences: the visible illustration sets the pace. */
+.symbol-caption {font-size: 15px; letter-spacing: .015em; color: #62626e;}
+.footer-brand .brand {margin-bottom: 10px;}
+.footer-brand .brand-full-name {font-size: 16px; font-weight: 550; color: #494955; margin: 0 0 18px;}
+.story-intro .eyebrow {text-wrap: balance;}
+.proof-panel {--proof: 1;}
+.use-pills {--cases: 1;}
+.principle-mark {--letter-0: 1; --letter-1: 1; --letter-2: 1; --letter-3: 1;}
+.protocol-flow {--flow-in: 1; --flow-node: 1; --flow-out: 1;}
+
+.motion-enabled .overview .explorer-private i {
+  transform: scaleX(calc(1 - var(--proof) * .55));
+}
+.motion-enabled .overview .explorer-private {
+  transform: translateY(calc(var(--proof) * -12px));
+}
+.motion-enabled .overview .explorer-result {
+  transform: translateY(calc((1 - var(--proof)) * 24px)) scale(calc(.96 + var(--proof) * .04));
+}
+.motion-enabled .overview .explorer-seam:before {transform: scaleY(var(--proof));}
+.motion-enabled .proof-panel.is-switching .result-badge {
+  animation: proof-confirm .55s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes proof-confirm {
+  from {transform: translateY(7px); opacity: .35;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+.use-pills>span {--case-delay: 0;}
+.use-pills>span:nth-child(2) {--case-delay: .10;}
+.use-pills>span:nth-child(3) {--case-delay: .20;}
+.use-pills>span:nth-child(4) {--case-delay: .30;}
+.use-pills>span:nth-child(5) {--case-delay: .40;}
+.motion-enabled .use-pills>span {
+  --case-reveal: clamp(0, (var(--cases) - var(--case-delay)) / .6, 1);
+  transform: translateY(calc((1 - var(--case-reveal)) * 16px));
+  opacity: calc(.4 + var(--case-reveal) * .6);
+}
+.route-destination {transition: color .25s;}
+.motion-enabled .world-route .route-destination {
+  color: rgb(255 255 255 / calc(.5 + var(--route) * .5));
+}
+
+.letter-k {--letter-reveal: var(--letter-0);}
+.letter-p {--letter-reveal: var(--letter-1);}
+.letter-i {--letter-reveal: var(--letter-2);}
+.letter-d {--letter-reveal: var(--letter-3);}
+.motion-enabled .wordmark-letter {
+  transform: translateY(calc((1 - var(--letter-reveal)) * 18px));
+  opacity: calc(.15 + var(--letter-reveal) * .85);
+}
+
+.motion-enabled .protocol-flow>i:first-of-type {transform: scaleX(var(--flow-in));}
+.motion-enabled .protocol-flow>i:last-of-type {transform: scaleX(var(--flow-out));}
+.motion-enabled .protocol-node {
+  transform: translateY(calc((1 - var(--flow-node)) * 12px));
+  border-color: rgb(111 149 238 / calc(.3 + var(--flow-node) * .6));
+  box-shadow: 0 0 32px rgb(50 100 218 / calc(var(--flow-node) * .14));
+}
+.motion-enabled .protocol-flow>span:last-child {
+  opacity: calc(.45 + var(--flow-out) * .55);
+}
+
+/* Progressive enhancement; native details remains the fallback. */
+@supports (interpolate-size: allow-keywords) {
+  .faq-list details {interpolate-size: allow-keywords;}
+  .faq-list details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size .28s ease, content-visibility .28s allow-discrete;
+  }
+  .faq-list details[open]::details-content {block-size: auto;}
+}
+
+@media (max-width: 600px) {
+  .symbol-caption {font-size: 14px;}
+  .footer-brand .brand-full-name {font-size: 15px;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .wordmark-letter, .use-pills>span, .result-badge, .protocol-flow>span:last-child {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .route-destination, .faq-list details::details-content {transition: none;}
+}

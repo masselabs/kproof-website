@@ -107,6 +107,43 @@ export async function checkSite() {
       }
     }
     results.push({width: 1440, lang: 'scroll', scrollWidth: doc.documentElement.scrollWidth, overflow: [], errors: scrollErrors});
+    const timingErrors = [];
+    if (doc.documentElement.classList.contains('motion-enabled')) {
+      const route = doc.querySelector('.world-route');
+      // Isolate the scrub timing from the generic entry transition.
+      route.classList.add('is-visible');
+      route.style.transition = 'none';
+      route.style.transform = 'none';
+      const center = route.getBoundingClientRect().top + win.scrollY + route.offsetHeight / 2;
+      for (const [position, expected] of [[.85, 0], [.69, 0], [.50, .5], [.32, 1], [.85, 0]]) {
+        win.scrollTo({top: center - win.innerHeight * position, behavior: 'instant'});
+        win.dispatchEvent(new win.Event('scroll'));
+        await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+        const actual = Number(route.style.getPropertyValue('--route'));
+        if (Math.abs(actual - expected) > .015) timingErrors.push(`route ${position}: ${actual}`);
+        const badge = doc.querySelector('.route-proof').getBoundingClientRect();
+        const track = doc.querySelector('.route-track').getBoundingClientRect();
+        if (badge.left < track.left - 1 || badge.right > track.right + 1) timingErrors.push('route badge escaped track');
+      }
+      route.style.removeProperty('transition');
+      route.style.removeProperty('transform');
+    }
+    results.push({width: 1440, lang: 'motion timing', scrollWidth: doc.documentElement.scrollWidth, overflow: [], errors: timingErrors});
+    // The small-viewport fallback shares the static reset path with reduced motion.
+    frame.style.height = '600px';
+    await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+    win.configureMotion();
+    const fallbackErrors = [];
+    if (doc.documentElement.classList.contains('motion-enabled')) fallbackErrors.push('motion remains enabled');
+    if (Number(win.getComputedStyle(doc.querySelector('.world-route')).getPropertyValue('--route')) !== 1) fallbackErrors.push('route not complete');
+    for (const letter of doc.querySelectorAll('.wordmark-letter')) {
+      const style = win.getComputedStyle(letter);
+      if (style.opacity !== '1' || style.transform !== 'none') fallbackErrors.push('letter not static');
+    }
+    for (const line of doc.querySelectorAll('.protocol-flow>i')) {
+      if (win.getComputedStyle(line).transform !== 'none') fallbackErrors.push('protocol not static');
+    }
+    results.push({width: 1440, lang: 'static fallback', scrollWidth: doc.documentElement.scrollWidth, overflow: [], errors: fallbackErrors});
     return {passed: results.every(result => !result.errors.length && !result.overflow.length && result.scrollWidth === result.width),results};
   } finally { frame.remove(); }
 }

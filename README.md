@@ -16,6 +16,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 - `index.html`: 한국어 기본 콘텐츠와 시맨틱 페이지 구조
 - `css/styles.css`: 색상 토큰, 제품 중심 레이아웃, 반응형 스타일
+- `css/motion.css`: 화면에 들어온 도해 기준의 순차 효과와 FAQ 열림 전환
 - `css/brand.css`: KPID 워드마크의 영역별 크기·비율과 모바일 배치
 - `css/typography.css`: 제목·리드·본문·보조 안내의 공통 글자 크기, 대비, 행간과 반응형 간격
 - `css/ambient.css`, `assets/ambient-red.svg`, `assets/ambient-blue.svg`: 섹션 배경의 느리게 흐르는 적·청색 곡선
@@ -24,9 +25,12 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `assets/mobile-id.svg`: 인물 영역과 보안 문양을 포함한 자체 제작 신분증 예시 그래픽
 - `assets/fonts/`: 로컬 Pretendard Variable v1.3.9와 SIL OFL 1.1 라이선스
 - `qa/check-source.cjs`: 번역 키, 내부 링크, 로컬 자산, 미구현 URL, 외부 링크 속성 검사
+- `qa/check-motion.cjs`: 활용 사례의 시작 시점·역방향 스크롤·순차 효과 로직 검사
 - `qa/checks.js`: 로컬 브라우저에서 실행하는 반응형·메뉴·FAQ·인터랙션 검사
 
 ## 디자인
+
+첫 화면·브랜드 소개·푸터에 Korean Privacy ID를 표시해 KPID의 정식 명칭을 설명합니다. 활용 사례의 로고 이동은 연결선 영역 중심이 화면 높이 68% 지점에 도달한 뒤 시작하며, 32% 지점까지 스크롤에 맞춰 진행됩니다. 기존 섹션 진입률과 분리해 설명을 읽기 전에 이동이 끝나지 않도록 했습니다. 활용 항목, KPID 글자, 개발자 영역의 요청·증명·검증을 순서대로 드러내며 역방향 스크롤을 지원합니다. FAQ에는 지원 브라우저에서 부드러운 펼침 전환을 적용합니다. 움직임 감소 설정에서는 완성된 정적 상태로 표시합니다.
 
 타이포그래피는 제목의 크기를 절제하고 설명을 확대해 읽는 흐름을 조정했습니다. 주요 설명과 본문은 16~22px, 보조 안내는 12~14px를 중심으로 사용합니다. 증명 결과·단계 제목·전달 정보 구분은 굵기와 대비로 강조하며, 신분증 그림 안의 축소된 표기는 별도 크기를 사용합니다. 앱 예시의 높이와 문단 폭도 확대된 글자에 맞춰 조정했습니다.
 
@@ -53,6 +57,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 ## 확인한 레퍼런스
 
+- [Linear](https://linear.app/): 2026-10-26에 공식 홈페이지의 제품 흐름과 단계별 설명 구성을 참고했습니다. 이 사이트의 시각 자산이나 서비스 문구는 가져오지 않았습니다.
 - [ZKPassport](https://zkpassport.id/): 실제 페이지의 기능 설명, 사용자 단계, 개발자 안내, FAQ 구조를 확인했습니다. 해당 서비스의 현재 지원 범위, 주장, 이미지와 문구는 이 제품으로 옮기지 않았습니다.
 - [대한민국 모바일 신분증 디자인 가이드](https://dev.mobileid.go.kr/mip/dfs/useguide/mdGuide.do?guide=designguide): 최초 접속에는 로그인 안내가 표시되었으나 이후 Chrome에서 본문을 확인했습니다. 공식 BI 변형 금지, 전용 버튼 적용 범위와 제출정보 확인 절차를 검토했습니다. 본 사이트에는 정부 BI, 전용 인증 버튼, 실물 신분증이나 정부 인증 마크를 사용하지 않습니다.
 - [Pretendard](https://github.com/orioncactus/pretendard): 공식 저장소의 폰트를 로컬 제공하며 원문 라이선스를 포함합니다. 폰트 CDN이나 추적 스크립트 호출이 없습니다.
@@ -73,6 +78,7 @@ SDK, 개발자 문서, 앱스토어, API, 제품 전용 저장소, 개인정보�
 
 ```sh
 node qa/check-source.cjs
+node qa/check-motion.cjs
 node --check js/app.js
 ```
 

@@ -1,5 +1,14 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Expanded name and illustration-led motion, 2026-10-26
+
+- Added Korean Privacy ID to the hero and footer, and made the brand caption explicitly read KPID · Korean Privacy ID.
+- The use-case route now waits until its own center reaches 68% of the viewport, then completes at 32%. Added sequential use-case labels, upright letter reveals, proof-result confirmation and request/prove/verify flow; FAQ expansion is a progressive CSS enhancement.
+- Source, JavaScript syntax and whitespace checks passed. The new Node motion check passes early-start boundaries at three heights, forward/reverse and jump scrolling, letter order and sequential protocol stages. SVG structure and original letter geometry were also checked.
+- Safari passed all 13 browser groups: KO/EN at 360, 390, 768, 1024 and 1440px, existing controls/scroll interactions, route timing and badge containment, and the static reset at a 600px viewport height. This last check exercises the same reset path as reduced motion; the OS motion preference was not changed.
+- Reviewed Safari screenshots of the 390px hero, use-case route and protocol diagram, and the 1120px brand section. The expanded name, original wordmark proportions and wider route badge remained legible without overlap. This also verifies the previous wordmark integration in these views.
+- Retrieved the official ZKPassport and Linear homepages and relevant styles to reference staged product explanations and disclosure transitions. Browser access to those external sites through the Chrome connector timed out; no claim is made that all external animations were watched live.
+
 ## Selected KPID wordmark integration, 2026-10-26
 
 - Applied the approved first wordmark to all five image placements and the inline brand-story SVG. Both external SVGs match the selected source files exactly; the inline paths match the same geometry. The favicon uses the selected wordmark's i at a legible square-icon scale.
