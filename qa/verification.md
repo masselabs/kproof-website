@@ -1,5 +1,11 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## More dynamic curve motion, 2026-10-26
+
+- Shortened red/blue cycles from 30/38s to 18/23s. Added intermediate travel positions, increased translation/rotation, and subtle nonuniform scaling. Loop endpoints match for seamless repetition.
+- Mobile travel and rotation use smaller values. Existing opacity, clipping, offscreen/hidden-tab pausing and reduced-motion rules are preserved.
+- Source and Git whitespace checks passed. Refreshed the local site in native Chrome and inspected the desktop rendering. This CSS-only adjustment did not rerun the full responsive/interaction suite recorded below.
+
 ## Ambient red/blue curves, 2026-10-25
 
 - Added decorative backgrounds to eight areas: hero, overview, journey, use cases, brand, developers, FAQ and footer. Each uses local SVG curves with CSS transform animations behind the content.

@@ -1,10 +1,13 @@
-/* Slow red/blue curves, always behind the content and outside hit testing. */
+/* Flowing red/blue curves, always behind the content and outside hit testing. */
 [data-ambient] {
   isolation: isolate;
   --ambient-strength: .56;
   --ambient-direction: 1;
   --ambient-red-phase: -7s;
   --ambient-blue-phase: -19s;
+  --ambient-travel-x: 5%;
+  --ambient-travel-y: 4%;
+  --ambient-swing: 6deg;
 }
 .overview, .brand-story, .developer-section, .faq-section, .site-footer {position: relative;}
 [data-ambient="dark"] {--ambient-strength: 1;}
@@ -41,26 +44,28 @@
 }
 .ambient-field::before {
   background-image: url('../assets/ambient-red.svg');
-  animation: ambient-red-drift 30s ease-in-out var(--ambient-red-phase) infinite paused;
+  animation: ambient-red-drift 18s ease-in-out var(--ambient-red-phase) infinite paused;
 }
 .ambient-field::after {
   background-image: url('../assets/ambient-blue.svg');
-  animation: ambient-blue-drift 38s ease-in-out var(--ambient-blue-phase) infinite paused;
+  animation: ambient-blue-drift 23s ease-in-out var(--ambient-blue-phase) infinite paused;
 }
 .overview .ambient-field::after, .journey-sticky .ambient-field::before {opacity: .55;}
 .developer-section .ambient-field::before {opacity: .35;}
 .ambient-field.is-active::before, .ambient-field.is-active::after {animation-play-state: running;}
 .page-hidden .ambient-field::before, .page-hidden .ambient-field::after {animation-play-state: paused;}
 @keyframes ambient-red-drift {
-  0%, 100% {transform: translate(-2%, 1%) rotate(-3deg) scaleX(var(--ambient-direction));}
-  50% {transform: translate(3%, -3%) rotate(4deg) scaleX(var(--ambient-direction));}
+  0%, 100% {transform: translate(calc(-1 * var(--ambient-travel-x)), 2%) rotate(calc(-1 * var(--ambient-swing))) scale(1.02, .98) scaleX(var(--ambient-direction));}
+  33% {transform: translate(3%, calc(-1 * var(--ambient-travel-y))) rotate(2deg) scale(.98, 1.04) scaleX(var(--ambient-direction));}
+  66% {transform: translate(var(--ambient-travel-x), 1%) rotate(var(--ambient-swing)) scale(1.04, 1.02) scaleX(var(--ambient-direction));}
 }
 @keyframes ambient-blue-drift {
-  0%, 100% {transform: translate(2%, -2%) rotate(3deg) scaleX(var(--ambient-direction));}
-  50% {transform: translate(-3%, 3%) rotate(-4deg) scaleX(var(--ambient-direction));}
+  0%, 100% {transform: translate(4%, calc(-1 * var(--ambient-travel-y))) rotate(var(--ambient-swing)) scale(1.04, .98) scaleX(var(--ambient-direction));}
+  40% {transform: translate(calc(-1 * var(--ambient-travel-x)), 2%) rotate(calc(-1 * var(--ambient-swing))) scale(.98, 1.05) scaleX(var(--ambient-direction));}
+  75% {transform: translate(1%, var(--ambient-travel-y)) rotate(-2deg) scale(1.03, 1.01) scaleX(var(--ambient-direction));}
 }
 @media (max-width: 600px) {
-  [data-ambient] {--ambient-strength: .46;}
+  [data-ambient] {--ambient-strength: .46; --ambient-travel-x: 4%; --ambient-travel-y: 3%; --ambient-swing: 4deg;}
   [data-ambient="dark"] {--ambient-strength: .8;}
   [data-ambient="soft"] {--ambient-strength: .34;}
   .ambient-field::before, .ambient-field::after {background-size: 185% 100%;}
