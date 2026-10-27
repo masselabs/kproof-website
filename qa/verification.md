@@ -1,5 +1,15 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Brand kit and shared website tokens, 2026-10-27
+
+- Added a Korean brand guide at `brand/index.html`: identity and clear space, minimum sizes, color roles, typography, layout/motion rules, voice, and downloadable assets. Homepage brand/footer links are translated in KO/EN.
+- Added 14 SVG exports, an offline guide, Pretendard WOFF2/OFL, CSS/JSON tokens and a deterministic ZIP builder with no third-party dependencies. The 1200 x 630 social templates retain editable text; app/social platform raster exports are not included.
+- The homepage and guide share generated CSS tokens. Applied the logo blue/red to primary actions and result emphasis, unified surface radii, moved existing type scales into shared tokens, and kept the existing motion sequences with shared durations.
+- Source checks passed with 136 bilingual keys; Node motion checks, JavaScript syntax and Git whitespace checks passed. Parsed all 14 SVGs, checked guide/homepage anchors and resource paths, and confirmed the kit wordmark matches its canonical source.
+- Verified ZIP CRC and every offline HTML/CSS resource path. The HTTP-downloaded ZIP matched the generated file byte for byte. Blue/white, red/white, muted/white and on-dark/black contrast ratios are 8.72, 5.19, 6.01 and 11.12 respectively.
+- Safari passed 10 homepage layout/control groups (KO/EN at 360, 390, 768, 1024, 1440px) and six guide widths (320, 360, 390, 768, 1024, 1440px), with no page overflow or missing SVGs. The guide loaded the shared brand token at every width. Used a temporary parent-timer layout harness because the previously recorded iframe animation-frame waits stalled; the full scroll timing suite was not rerun.
+- Visually reviewed the 390px guide hero, 1120px palette, and 360px downloads/social templates. Native Safari confirmed successful HEX copying and loaded the extracted offline guide via file URL. Rebuilding produced an identical ZIP hash. Removed temporary QA files and stopped the owned preview server. No OS settings or hosting/domain configuration were changed.
+
 ## KProof brand update, 2026-10-27
 
 - Replaced KPID with KProof in Korean/English copy, accessible names, title and Open Graph metadata. Added the Korea + Proof name explanation and a proof-focused hero/tagline. Kept the previous language-storage key to preserve existing preferences.

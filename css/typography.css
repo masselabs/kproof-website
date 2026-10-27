@@ -1,14 +1,4 @@
 /* A continuous reading scale: display, section, lead, body, supporting text. */
-:root {
-  --type-display: clamp(40px, 4.5vw, 64px);
-  --type-heading: clamp(34px, 3.8vw, 52px);
-  --type-subheading: clamp(22px, 2.1vw, 26px);
-  --type-lead: clamp(18px, 1.6vw, 22px);
-  --type-body: 17px;
-  --type-label: 14px;
-  --type-caption: 13px;
-  --muted: #62626e;
-}
 
 body {font-size: var(--type-body); line-height: 1.65;}
 h1, h2, h3 {text-wrap: balance;}
@@ -35,7 +25,7 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
   margin-bottom: 18px;
 }
 .section-intro, .hero-description, .use-heading>p:last-child,
-.developer-top .section-intro, .brand-explanation>p:last-child,
+.developer-top .section-intro, .brand-explanation>p:not(.eyebrow),
 .story-end>p:last-child {
   font-size: var(--type-lead);
   font-weight: 430;
@@ -45,12 +35,12 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
   max-width: 640px;
 }
 .hero-description {max-width: 720px; color: #b6b6c1;}
-.story h1>span:last-child {color: #bfc1ce;}
+.story h1>span:last-child {color: var(--kp-color-on-dark);}
 .story-intro .eyebrow {color: #b0b0bc;}
 .story-end h2, html[lang=en] .story-end h2 {font-size: var(--type-heading); line-height: 1.28;}
 .story-end>p:last-child {max-width: 630px; color: #b7bbc8;}
 .story-end .eyebrow {color: #b4c5f0;}
-.brand-explanation>p:last-child {font-size: 20px; color: var(--muted);}
+.brand-explanation>p:not(.eyebrow) {font-size: 20px; color: var(--muted);}
 .brand-explanation .eyebrow {color: #666674;}
 .site-header nav a {font-size: 14px; color: #b9b9c3;}
 .site-header nav {gap: 26px;}
@@ -70,19 +60,19 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
 .micro-label, .explorer-private>.micro-label, .explorer-result .micro-label {
   font-size: var(--type-label);
   font-weight: 600;
-  color: #62626e;
+  color: var(--kp-color-muted);
   letter-spacing: .01em;
 }
 .explorer-private>.micro-label {color: #494955; margin-bottom: 24px;}
-.explorer-result .micro-label {color: #2452b7; font-weight: 700;}
-.proof-tabs button {font-size: 17px; color: #62626e;}
+.explorer-result .micro-label {color: var(--kp-color-blue); font-weight: 700;}
+.proof-tabs button {font-size: 17px; color: var(--kp-color-muted);}
 .proof-panel {padding: 26px 32px 44px; grid-template-columns: 1fr 80px 1.4fr;}
-.explorer-private>div {font-size: 16px; color: #62626e;}
-.private-caption {font-size: var(--type-caption); color: #62626e;}
+.explorer-private>div {font-size: 16px; color: var(--kp-color-muted);}
+.private-caption {font-size: var(--type-caption); color: var(--kp-color-muted);}
 .result-display {font-size: clamp(88px, 8vw, 112px); margin: 12px 0 18px;}
 .explorer-result h3, .journey-screen h3 {font-size: var(--type-subheading); line-height: 1.35; font-weight: 650;}
 .explorer-result>p:not(.micro-label) {font-size: var(--type-body); line-height: 1.7; color: var(--muted); max-width: 390px;}
-.result-badge {font-size: var(--type-label); font-weight: 650; color: #2452b7; padding: 9px 15px;}
+.result-badge {font-size: var(--type-label); font-weight: 650; color: var(--kp-color-blue); padding: 9px 15px;}
 .explorer-note, .journey-note {font-size: var(--type-caption); line-height: 1.65; color: #70707d;}
 
 .journey-steps strong, html[lang=en] .journey-steps strong {font-size: var(--type-subheading); line-height: 1.35; font-weight: 620;}
@@ -123,7 +113,7 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
 .faq-section h2 {font-size: clamp(32px, 3vw, 44px);}
 .faq-list summary {font-size: 20px; line-height: 1.5; font-weight: 580;}
 .faq-list details>p {font-size: var(--type-body); line-height: 1.75;}
-.footer-brand p, .footer-links {font-size: 14px; line-height: 1.65; color: #62626e;}
+.footer-brand p, .footer-links {font-size: 14px; line-height: 1.65; color: var(--kp-color-muted);}
 .footer-links [aria-disabled] {color: #767682;}
 .footer-bottom {font-size: 13px; line-height: 1.7; color: #696975;}
 .footer-main>*, .developer-bottom>*, .journey>* {min-width: 0;}
@@ -154,20 +144,11 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
   .footer-main {flex-wrap: wrap;}
   .footer-links {gap: 18px 32px;}
   .protocol-flow {gap: 16px;}
-  .brand-explanation>p:last-child {font-size: 18px;}
+  .brand-explanation>p:not(.eyebrow) {font-size: 18px;}
 }
 
 @media (max-width: 600px) {
-  :root {
-    --type-display: clamp(30px, 8.2vw, 36px);
-    --type-heading: clamp(29px, 7.6vw, 34px);
-    --type-subheading: 22px;
-    --type-lead: 17px;
-    --type-body: 16px;
-    --type-label: 13px;
-    --type-caption: 12px;
-  }
-  .section {padding: 80px 0;}
+  .section {padding: var(--kp-layout-section) 0;}
   .section-heading {margin-bottom: 34px;}
   .story-intro {top: 5%; left: 20px; right: 20px;}
   .story-intro .eyebrow {font-size: 11px; margin-bottom: 20px; letter-spacing: .025em;}
@@ -183,7 +164,7 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
   .concept-label {font-size: 12px;}
   .language-switch button {font-size: 11px; padding-inline: 5px;}
   .section-intro, .use-heading>p:last-child, .developer-top .section-intro,
-  .brand-explanation>p:last-child {font-size: 17px; line-height: 1.75; margin-top: 20px; max-width: 100%;}
+  .brand-explanation>p:not(.eyebrow) {font-size: 17px; line-height: 1.75; margin-top: 20px; max-width: 100%;}
   .proof-core strong {font-size: 26px;}
   .proof-core>span:last-child {font-size: 13px;}
   .proof-tabs {gap: 28px; padding: 16px 0;}

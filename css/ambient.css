@@ -44,11 +44,11 @@
 }
 .ambient-field::before {
   background-image: url('../assets/ambient-red.svg');
-  animation: ambient-red-drift 18s ease-in-out var(--ambient-red-phase) infinite paused;
+  animation: ambient-red-drift var(--kp-motion-red-loop) ease-in-out var(--ambient-red-phase) infinite paused;
 }
 .ambient-field::after {
   background-image: url('../assets/ambient-blue.svg');
-  animation: ambient-blue-drift 23s ease-in-out var(--ambient-blue-phase) infinite paused;
+  animation: ambient-blue-drift var(--kp-motion-blue-loop) ease-in-out var(--ambient-blue-phase) infinite paused;
 }
 .overview .ambient-field::after, .journey-sticky .ambient-field::before {opacity: .55;}
 .developer-section .ambient-field::before {opacity: .35;}

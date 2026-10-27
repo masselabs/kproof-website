@@ -2,6 +2,20 @@
 
 한국 모바일 신분증 기반 개인정보 보호형 인증 제품의 출시 전 소개 사이트입니다. HTML, CSS, Vanilla JavaScript만 사용하며 빌드나 패키지 설치가 필요하지 않습니다.
 
+## 브랜드 킷
+
+`brand/index.html`에서 로고·색상·서체·여백·모션·문구 규칙을 확인하고 `brand/kproof-brand-kit.zip`을 내려받을 수 있습니다. 홈페이지의 브랜드 소개와 푸터에서 연결됩니다. ZIP에는 14개 SVG(컬러·반전·단색 워드마크와 K 심벌, 앱 아이콘, 파비콘, 공유 이미지 2종, 적·청색 곡선), Pretendard 웹폰트와 OFL 라이선스, 오프라인 가이드, CSS/JSON 토큰을 포함합니다. 압축을 풀고 `brand/index.html`을 열면 됩니다.
+
+홈페이지와 가이드는 `brand/tokens.json`에서 생성한 `css/tokens.css`를 공유합니다. 주요 동작과 증명 강조색은 KProof Blue `#0047A0`, 적색 포인트는 `#CD2E3A`입니다. 제목·본문 크기, 기본 서체, 섹션 간격, 모서리와 기본 모션 시간도 토큰으로 관리합니다. 로고의 원본은 `assets/logo.svg`와 `assets/logo-inverse.svg`입니다.
+
+브랜드 에셋, 가이드 또는 토큰을 수정한 뒤 다음 명령으로 배포 파일을 갱신하세요. Python 표준 라이브러리만 사용하며 로컬 사이트 실행에는 이 빌드가 필요하지 않습니다.
+
+```sh
+python3 scripts/build-brand-kit.py
+```
+
+공유 이미지는 편집 가능한 SVG 템플릿입니다. 소셜 플랫폼에는 PNG/JPEG로 내보내고, 앱 아이콘은 대상 플랫폼의 제출 규격에 맞춰 변환하세요. 자세한 사용 규칙은 `brand/README.txt`에 있습니다.
+
 ## 로컬 실행
 
 이 디렉터리에서 다음을 실행합니다.

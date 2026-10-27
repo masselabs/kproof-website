@@ -20,7 +20,7 @@
   width: var(--route-badge-width);
   height: var(--route-badge-height);
   left: calc(var(--route-badge-width) / 2 + var(--route) * (100% - var(--route-badge-width)));
-  border-radius: 10px;
+  border-radius: var(--kp-radius-medium);
 }
 .route-proof img {width: 136px;}
 .protocol-node img {width: 110px;}
@@ -41,3 +41,10 @@
   .protocol-node img {width: 92px;}
   .principle-mark {width: min(100%, 310px);}
 }
+
+/* Shared brand rules used by both the product site and the downloadable guide. */
+.brand-guide-link {margin-top: 24px; color: var(--kp-color-blue);}
+.app-surface {border-radius: var(--kp-radius-large);}
+.protocol-node {border-radius: var(--kp-radius-medium);}
+.result-badge {border-radius: var(--kp-radius-pill);}
+.use-section {padding-top: var(--kp-layout-section);}

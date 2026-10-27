@@ -136,7 +136,9 @@ const translations = {
     "protocolRequest": "조건 요청",
     "protocolProof": "증명 생성",
     "protocolVerify": "결과 검증",
-    "brandTagline": "필요한 사실만 증명하세요."
+    "brandTagline": "필요한 사실만 증명하세요.",
+    "brandKit": "브랜드 킷",
+    "brandGuide": "브랜드 가이드"
   },
   "en": {
     "skip": "Skip to content",
@@ -272,7 +274,9 @@ const translations = {
     "protocolRequest": "Request",
     "protocolProof": "Prove",
     "protocolVerify": "Verify",
-    "brandTagline": "Prove what matters."
+    "brandTagline": "Prove what matters.",
+    "brandKit": "Brand kit",
+    "brandGuide": "Brand guidelines"
   }
 };
 const storageKey = "korean-privacy-id-language";
