@@ -1,5 +1,5 @@
 "use strict";
-// TODO: Set each URL only after its dedicated Korean Privacy ID resource is published.
+// TODO: Set each URL only after its dedicated KProof resource is published.
 const pendingUrls = Object.freeze({ sdk: "", developerDocs: "", appStore: "", googlePlay: "", apiReference: "", repository: "", privacyPolicy: "", termsOfService: "" });
 const translations = {
   "ko": {
@@ -14,16 +14,16 @@ const translations = {
     "enLabel": "영어로 보기",
     "menuOpen": "메뉴 열기",
     "menuClose": "메뉴 닫기",
-    "home": "KPID 홈",
+    "home": "KProof 홈",
     "status": "출시 준비 중",
-    "heroHeading": "개인정보 보호를 위한\n새로운 신원 인증",
-    "intro": "한국 모바일 신분증 기반의 프라이버시 인증 서비스.\n신원정보의 공개를 줄이고, 서비스에 필요한 조건을 증명합니다.",
+    "heroHeading": "개인정보는 지키고\n필요한 사실만 증명",
+    "intro": "한국 모바일 신분증으로 연령과 이용 자격을 증명합니다.\n서비스에는 확인에 필요한 결과만 전달합니다.",
     "learn": "서비스 알아보기",
     "contact": "기술 문의",
-    "by": "Masse Labs가 만드는 KPID",
+    "by": "Masse Labs가 만드는 KProof",
     "example": "화면 예시",
     "exampleCaption": "서비스 이용 과정을 보여주는 예시 화면입니다.",
-    "appBrand": "KPID",
+    "appBrand": "KProof",
     "request": "확인 요청",
     "requestDesc": "요청한 조건과 제공할 정보를 확인합니다.",
     "checkItem": "확인 항목",
@@ -94,15 +94,15 @@ const translations = {
     "policy": "개인정보처리방침 · 준비 중",
     "terms": "이용약관 · 준비 중",
     "official": "모바일 신분증 공식 안내",
-    "independent": "KPID는 Masse Labs가 개발·운영하는 독립 서비스이며, 정부의 공식 신분증 발급 앱이 아닙니다.",
+    "independent": "KProof는 Masse Labs가 개발·운영하는 독립 서비스이며, 정부의 공식 신분증 발급 앱이 아닙니다.",
     "footerNav": "서비스 관련 링크",
-    "title": "KPID | Korean Privacy ID",
-    "description": "한국 모바일 신분증 기반의 프라이버시 인증 서비스. 개인정보 공개를 최소화하는 KPID를 Masse Labs에서 개발하고 있습니다.",
+    "title": "KProof | 필요한 사실만 증명하세요",
+    "description": "KProof는 한국 모바일 신분증을 바탕으로 연령과 이용 자격을 증명하는 프라이버시 서비스입니다. Masse Labs에서 개발하고 있습니다.",
     "languageChanged": "한국어로 변경되었습니다.",
     "privateLabel": "원본 정보 비공개",
     "proofOnly": "조건 충족 여부만 전달",
-    "heroLine1": "개인정보 보호를 위한",
-    "heroLine2": "새로운 신원 인증",
+    "heroLine1": "개인정보는 지키고",
+    "heroLine2": "필요한 사실만 증명",
     "storyEndLabel": "SELECTIVE DISCLOSURE",
     "storyEndTitle": "인증에 필요한 결과만",
     "storyEndText": "이름이나 생년월일을 전달하는 대신, 요청한 조건을 충족하는지 증명합니다.",
@@ -126,8 +126,8 @@ const translations = {
     "journeyTabs": "이용 단계 선택",
     "generateCaption": "모바일 신분증을 기반으로 요청한 조건에 대한 증명을 생성합니다.",
     "markLabel": "PRIVACY BY DESIGN",
-    "markTitle": "개인정보 보호,\n인증의 설계부터",
-    "markText": "확인에 필요한 정보와 공개할 정보를 구분합니다. 개인정보 공개를 최소화하는 원칙을 인증 과정 전반에 적용합니다.",
+    "markTitle": "개인정보 보호,\n증명의 설계부터",
+    "markText": "KProof는 한국을 뜻하는 K와 증명을 뜻하는 Proof를 결합한 이름입니다. 한국 모바일 신분증을 바탕으로, 필요한 조건의 충족 여부만 증명합니다.",
     "mobileID": "모바일 신분증",
     "cardSample": "설명용 예시",
     "cardCaption": "모바일 신분증을 재구성한 예시 이미지",
@@ -135,7 +135,8 @@ const translations = {
     "protocolLabel": "서비스 연동 구조",
     "protocolRequest": "조건 요청",
     "protocolProof": "증명 생성",
-    "protocolVerify": "결과 검증"
+    "protocolVerify": "결과 검증",
+    "brandTagline": "필요한 사실만 증명하세요."
   },
   "en": {
     "skip": "Skip to content",
@@ -149,16 +150,16 @@ const translations = {
     "enLabel": "View in English",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
-    "home": "KPID home",
+    "home": "KProof home",
     "status": "In development",
-    "heroHeading": "Verify eligibility without\nrevealing your identity.",
-    "intro": "Privacy-preserving verification built on Korean Mobile ID.\nProve service requirements while limiting disclosure.",
+    "heroHeading": "Keep your privacy.\nProve what matters.",
+    "intro": "Prove age and eligibility with Korean Mobile ID.\nShare only the result the service needs.",
     "learn": "How it works",
     "contact": "Technical inquiries",
     "by": "A product in development by Masse Labs",
     "example": "Illustrative screen",
     "exampleCaption": "A concept screen illustrating the planned experience.",
-    "appBrand": "KPID",
+    "appBrand": "KProof",
     "request": "Verification request",
     "requestDesc": "Review what will be shared with the service.",
     "checkItem": "Requirement",
@@ -229,15 +230,15 @@ const translations = {
     "policy": "Privacy policy · Coming soon",
     "terms": "Terms of service · Coming soon",
     "official": "Official Korean Mobile ID website",
-    "independent": "KPID is an independent service developed and operated by Masse Labs. It is not an official government ID issuance app.",
+    "independent": "KProof is an independent service developed and operated by Masse Labs. It is not an official government ID issuance app.",
     "footerNav": "Service links",
-    "title": "KPID | Korean Privacy ID",
-    "description": "KPID is being developed by Masse Labs to prove age and eligibility using Korean Mobile ID while reducing personal information disclosure.",
+    "title": "KProof | Prove what matters",
+    "description": "KProof is a privacy-preserving service for proving age and eligibility with Korean Mobile ID. In development by Masse Labs.",
     "languageChanged": "Language changed to English.",
     "privateLabel": "Personal details stay private",
     "proofOnly": "Just the fact that matters.",
-    "heroLine1": "Identity verification.",
-    "heroLine2": "Privacy by design.",
+    "heroLine1": "Keep your privacy.",
+    "heroLine2": "Prove what matters.",
     "storyEndLabel": "LESS TO REVEAL",
     "storyEndTitle": "Only the fact remains.",
     "storyEndText": "Designed to share whether a requirement is met, instead of your name or date of birth.",
@@ -261,8 +262,8 @@ const translations = {
     "journeyTabs": "Choose a step",
     "generateCaption": "Review the request, then create a proof of the required condition.",
     "markLabel": "PRIVACY BY DESIGN",
-    "markTitle": "Privacy, built into\nevery verification.",
-    "markText": "Distinguish what needs to be verified from what needs to be shared. Minimize personal information disclosure throughout the verification process.",
+    "markTitle": "Privacy, built into\nevery proof.",
+    "markText": "KProof combines K for Korea with Proof. Built on Korean Mobile ID, it proves that you meet a requirement while limiting the personal information you share.",
     "mobileID": "Mobile identity",
     "cardSample": "Illustrative sample",
     "cardCaption": "Illustrative mobile identity card",
@@ -270,7 +271,8 @@ const translations = {
     "protocolLabel": "Service integration flow",
     "protocolRequest": "Request",
     "protocolProof": "Prove",
-    "protocolVerify": "Verify"
+    "protocolVerify": "Verify",
+    "brandTagline": "Prove what matters."
   }
 };
 const storageKey = "korean-privacy-id-language";
@@ -427,8 +429,8 @@ function renderDetails(viewport) {
   const proof = viewportProgress(motionDetails.proof.getBoundingClientRect(), viewport, .80, .44);
   document.querySelector('.proof-panel').style.setProperty('--proof', proof.toFixed(4));
   const mark = viewportProgress(motionDetails.mark.parentElement.getBoundingClientRect(), viewport, .80, .44);
-  for (let index = 0; index < 4; index++) {
-    motionDetails.mark.style.setProperty(`--letter-${index}`, ramp(mark, index * .13, .55 + index * .13).toFixed(4));
+  for (let index = 0; index < 6; index++) {
+    motionDetails.mark.style.setProperty(`--letter-${index}`, ramp(mark, index * .08, .60 + index * .08).toFixed(4));
   }
   const flow = viewportProgress(motionDetails.flow.getBoundingClientRect(), viewport, .76, .38);
   motionDetails.flow.style.setProperty('--flow-in', ramp(flow, 0, .40).toFixed(4));
@@ -481,7 +483,7 @@ function configureMotion() {
     motionDetails.route.style.removeProperty('--route');
     document.querySelector('.use-pills').style.removeProperty('--cases');
     document.querySelector('.proof-panel').style.removeProperty('--proof');
-    for (let index = 0; index < 4; index++) motionDetails.mark.style.removeProperty(`--letter-${index}`);
+    for (let index = 0; index < 6; index++) motionDetails.mark.style.removeProperty(`--letter-${index}`);
     ['--flow-in', '--flow-node', '--flow-out'].forEach(name => motionDetails.flow.style.removeProperty(name));
     journeyManualAt = null;
     story.removeAttribute('style');

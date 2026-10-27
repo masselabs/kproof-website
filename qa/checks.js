@@ -24,7 +24,7 @@ export async function checkSite() {
         }).map(element => element.className || element.tagName);
         const errors = [];
         if (doc.documentElement.lang !== lang) errors.push('html lang');
-        if (!doc.title.includes('Korean Privacy ID')) errors.push('title');
+        if (!doc.title.includes('KProof')) errors.push('title');
         if ([...doc.querySelectorAll('[data-i18n]')].some(e => !e.textContent.trim() || e.textContent.includes('undefined'))) errors.push('translation');
         if ([...doc.querySelectorAll('a[href^="#"]')].some(e => !doc.getElementById(e.hash.slice(1)))) errors.push('anchor');
         if (doc.querySelector('a[href="#"],a[href=""],link[rel="canonical"]')) errors.push('placeholder link or invented canonical');

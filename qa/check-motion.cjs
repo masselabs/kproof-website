@@ -57,8 +57,8 @@ for (const key of ['--flow-in', '--flow-node', '--flow-out']) assert.equal(flow.
 const mark = element('.principle-mark');
 mark.rect.top = viewport * .62 - mark.rect.height / 2;
 renderDetails(viewport);
-const letters = [0, 1, 2, 3].map(i => mark.value(`--letter-${i}`));
+const letters = [0, 1, 2, 3, 4, 5].map(i => mark.value(`--letter-${i}`));
 assert.ok(letters.every((value, i) => i === 0 || value < letters[i - 1]), 'letters reveal in reading order');
 mark.rect.top = 0; renderDetails(viewport);
-for (let i = 0; i < 4; i++) assert.equal(mark.value(`--letter-${i}`), 1);
+for (let i = 0; i < 6; i++) assert.equal(mark.value(`--letter-${i}`), 1);
 console.log('PASS: route stays still until visible, forward/reverse and jump scrolling, viewport scaling, sequential proof flow and wordmark reveal.');

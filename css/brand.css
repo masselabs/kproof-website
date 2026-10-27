@@ -1,20 +1,20 @@
-/* Selected KPID wordmark: preserve the original outlines and proportions. */
+/* KProof: six custom letters and a red/blue K, at their original proportions. */
 .brand-mark,
 .app-top img,
 .route-proof img,
 .protocol-node img,
 .principle-mark {
-  aspect-ratio: 442 / 144;
+  aspect-ratio: 789 / 144;
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .brand {min-height: 44px;}
-.brand-mark {width: 110px;}
-.footer-brand .brand-mark {width: 132px;}
-.app-top img {width: 86px;}
-.world-route {--route-badge-width: 112px; --route-badge-height: 64px;}
+.brand-mark {width: 160px;}
+.footer-brand .brand-mark {width: 176px;}
+.app-top img {width: 120px;}
+.world-route {--route-badge-width: 160px; --route-badge-height: 64px;}
 .world-route .route-proof,
 .world-route.is-visible .route-proof {
   width: var(--route-badge-width);
@@ -22,22 +22,22 @@
   left: calc(var(--route-badge-width) / 2 + var(--route) * (100% - var(--route-badge-width)));
   border-radius: 10px;
 }
-.route-proof img {width: 86px;}
-.protocol-node img {width: 74px;}
-.principle-mark {width: min(100%, 380px);}
+.route-proof img {width: 136px;}
+.protocol-node img {width: 110px;}
+.principle-mark {width: min(100%, 430px);}
 
 @media (max-width: 900px) {
-  .world-route {--route-badge-width: 96px; --route-badge-height: 56px;}
-  .route-proof img {width: 74px;}
+  .world-route {--route-badge-width: 136px; --route-badge-height: 56px;}
+  .route-proof img {width: 112px;}
 }
 
 @media (max-width: 600px) {
-  .brand-mark {width: 96px;}
-  .footer-brand .brand-mark {width: 120px;}
-  .app-top img {width: 80px;}
-  .world-route {--route-badge-width: 76px; --route-badge-height: 44px;}
-  .route-proof img {width: 60px;}
+  .brand-mark {width: 144px;}
+  .footer-brand .brand-mark {width: 164px;}
+  .app-top img {width: 114px;}
+  .world-route {--route-badge-width: 104px; --route-badge-height: 44px;}
+  .route-proof img {width: 88px;}
   .protocol-node {flex-direction: column; gap: 8px;}
-  .protocol-node img {width: 64px;}
-  .principle-mark {width: min(100%, 280px);}
+  .protocol-node img {width: 92px;}
+  .principle-mark {width: min(100%, 310px);}
 }

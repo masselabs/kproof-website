@@ -1,5 +1,14 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## KProof brand update, 2026-10-27
+
+- Replaced KPID with KProof in Korean/English copy, accessible names, title and Open Graph metadata. Added the Korea + Proof name explanation and a proof-focused hero/tagline. Kept the previous language-storage key to preserve existing preferences.
+- Created a six-letter vector wordmark, inverse version and a red/blue K favicon. Adjusted all five image placements, the inline brand illustration and the six-letter reveal timing for the longer name.
+- Source checks passed with 134 matching bilingual keys. JavaScript syntax, Git whitespace, SVG parsing, intrinsic image dimensions and matching inline/external geometry passed. Node motion checks passed forward/reverse progress, early-start boundaries, six-letter order and completion.
+- Safari passed the 10 layout/control groups (360, 390, 768, 1024 and 1440px, KO/EN), with no horizontal overflow and working menus, tabs, keyboard controls and FAQ. A temporary visible-frame harness used parent-window timer waits because animation-frame callbacks stalled in this Safari session. The complete scroll/timing/static-fallback browser suite did not finish; these results do not certify its three motion groups.
+- Visually inspected the vector identity board, 360px Korean hero, 1440px English hero, and 390px route/app wordmark placements in Safari. The new marks fit their containers. In-frame animation transitions remained incomplete during this review, so motion validation for this change is limited to the Node checks above.
+- Removed temporary review files and stopped the owned HTTP preview server. No hosting or domain changes were made.
+
 ## Expanded name and illustration-led motion, 2026-10-26
 
 - Added Korean Privacy ID to the hero and footer, and made the brand caption explicitly read KPID · Korean Privacy ID.

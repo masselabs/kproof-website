@@ -5,7 +5,7 @@
 .story-intro .eyebrow {text-wrap: balance;}
 .proof-panel {--proof: 1;}
 .use-pills {--cases: 1;}
-.principle-mark {--letter-0: 1; --letter-1: 1; --letter-2: 1; --letter-3: 1;}
+.principle-mark {--letter-0: 1; --letter-1: 1; --letter-2: 1; --letter-3: 1; --letter-4: 1; --letter-5: 1;}
 .protocol-flow {--flow-in: 1; --flow-node: 1; --flow-out: 1;}
 
 .motion-enabled .overview .explorer-private i {
@@ -43,8 +43,10 @@
 
 .letter-k {--letter-reveal: var(--letter-0);}
 .letter-p {--letter-reveal: var(--letter-1);}
-.letter-i {--letter-reveal: var(--letter-2);}
-.letter-d {--letter-reveal: var(--letter-3);}
+.letter-r {--letter-reveal: var(--letter-2);}
+.letter-o1 {--letter-reveal: var(--letter-3);}
+.letter-o2 {--letter-reveal: var(--letter-4);}
+.letter-f {--letter-reveal: var(--letter-5);}
 .motion-enabled .wordmark-letter {
   transform: translateY(calc((1 - var(--letter-reveal)) * 18px));
   opacity: calc(.15 + var(--letter-reveal) * .85);
