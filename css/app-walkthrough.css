@@ -1,4 +1,4 @@
-/* Six precise viewport crops from the supplied 1280 x 548 app overview. */
+/* Six-screen app walkthrough with live text and vector illustrations. */
 .hero-brand-name {display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
 .hero-brand-name strong {color:#fff;font-weight:650;}
 .hero-full-name {color:#d4d8e4;}
@@ -18,15 +18,7 @@
 .app-walkthrough .journey-steps>button[aria-selected=true] {color:var(--kp-color-blue);}
 .app-walkthrough .journey-panel {padding:0;min-width:0;}
 .app-stage {display:grid;justify-items:center;gap:32px;}
-.app-phone {margin:0;width:min(100%,300px);padding:8px;background:#161619;border-radius:32px;box-shadow:0 20px 60px -30px #16264d66;}
-.app-screen-crop {position:relative;overflow:hidden;aspect-ratio:175 / 380;border-radius:25px;background:#f5f5f7;}
-.app-screen-crop img {position:absolute;max-width:none;width:731.428571%;height:auto;top:-38.684211%;left:var(--crop-x);display:block;}
-.crop-1 {--crop-x:-10.857143%;}
-.crop-2 {--crop-x:-132%;}
-.crop-3 {--crop-x:-253.714286%;}
-.crop-4 {--crop-x:-374.857143%;}
-.crop-5 {--crop-x:-496.571429%;}
-.crop-6 {--crop-x:-618.285714%;}
+.app-phone {margin:0;width:min(100%,360px);padding:8px;background:#161619;border-radius:32px;box-shadow:0 20px 60px -30px #16264d66;}
 .app-stage-caption {max-width:480px;}
 .app-stage-caption h3 {font-size:26px;line-height:1.35;margin-bottom:12px;}
 .app-stage-caption p {font-size:20px;line-height:1.7;color:var(--muted);}
@@ -43,13 +35,13 @@
 .motion-enabled .app-walkthrough .section-heading {margin-bottom:48px;}
 .motion-enabled .app-walkthrough h2 {font-size:var(--type-heading);}
 .motion-enabled .app-walkthrough .journey {gap:64px;}
-@media (min-width:901px) and (min-height:1100px) {
+@media (min-width:901px) and (min-height:1250px) {
  .motion-enabled .how-section.app-walkthrough {height:340svh;padding:0;}
  .motion-enabled .app-walkthrough .journey-sticky {position:sticky;top:var(--header);height:calc(100svh - var(--header));display:flex;flex-direction:column;justify-content:center;padding:28px 0;}
  .motion-enabled .app-walkthrough .section-heading {margin-bottom:28px;}
  .motion-enabled .app-walkthrough .journey {align-items:center;}
  .motion-enabled .app-walkthrough .journey-navigation {position:static;}
- .motion-enabled .app-walkthrough .app-phone {width:260px;}
+ .motion-enabled .app-walkthrough .app-phone {width:340px;}
  .motion-enabled .app-walkthrough .app-stage {gap:20px;}
 }
 @media (max-width:900px) {

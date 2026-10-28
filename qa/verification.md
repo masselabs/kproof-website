@@ -1,5 +1,14 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Crisp native app screens, 2026-10-28
+
+- Replaced all six raster crops with HTML/CSS and inline SVG: unlock, wallet, proof selection, request review, 48% proof creation and sent receipt. Preserved the supplied screen content, card order/colors, shared/private fields and receipt values. Removed the low-resolution JPEG from website assets.
+- Added 69 KO/EN labels for the screen interiors. Text remains selectable and renders at display resolution; existing vector brand assets supply the wordmark and service mark. All preview controls remain illustrative, with functional walkthrough controls outside the phone.
+- Increased the phone width to 360px and allowed the screen content to grow. Tall-screen pinning begins at 1250px height so the larger phone and captions fit. Added brief screen-entry, progress-arc and completion-check animations, disabled for reduced motion.
+- Source checks passed with 220 matching bilingual keys. JavaScript syntax, existing Node motion checks and Git whitespace checks passed.
+- Native Safari passed five widths (360, 390, 768, 1024, 1440px) in both languages, inspecting all six visible screen states: 60 combinations with no phone-content clipping or horizontal overflow. Existing navigation, keyboard selection, previous/next boundaries, menu and FAQ checks also passed. A 1440 x 1250px geometry check confirmed the heading and captions fit the pinned section for all six stages in both languages.
+- Visually reviewed the Korean 390px wallet, English 360px request and Korean 360px progress views in Safari. As in the preceding verification, the temporary layout harness used parent-window timers to avoid stalled iframe animation-frame callbacks. Full scroll scheduling was not recertified.
+
 ## Korean Proof, larger type and app walkthrough, 2026-10-28
 
 - Made Korean Proof explicit in the hero, metadata, brand explanation and kit. Added a scroll reveal that expands K into Korean in the brand caption. Rebuilt the v1.1 kit with the larger shared type scale.

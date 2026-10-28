@@ -19,7 +19,6 @@ export async function checkSite() {
         win.setLanguage(lang);
         await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
         const overflow = [...doc.querySelectorAll('body *')].filter(element => {
-          if (element.matches('.app-screen-crop img')) return false; // Intentionally clipped sprite source.
           const box = element.getBoundingClientRect();
           return box.width > 0 && (box.left < -1 || box.right > width + 1);
         }).map(element => element.className || element.tagName);
@@ -49,6 +48,17 @@ export async function checkSite() {
         for (let step = 0; step < 6; step++) {
           doc.querySelector('#step-tab-' + step).click();
           if (doc.querySelectorAll('[data-step-screen]:not([hidden])').length !== 1 || doc.querySelector('[data-step-screen="' + step + '"]').hidden) errors.push('journey step ' + step);
+          const screen = doc.querySelector('[data-step-screen="' + step + '"] .demo-screen');
+          const bounds = screen.getBoundingClientRect();
+          if (screen.scrollHeight > screen.clientHeight + 1 || screen.scrollWidth > screen.clientWidth + 1) errors.push('app viewport overflow ' + step);
+          for (const element of screen.querySelectorAll('*')) {
+            const rect = element.getBoundingClientRect();
+            if (rect.width && (rect.left < bounds.left - 1 || rect.right > bounds.right + 1 || rect.top < bounds.top - 1 || rect.bottom > bounds.bottom + 1)) {
+              errors.push('app content clipped ' + step + ': ' + element.className);
+              break;
+            }
+          }
+
         }
         doc.querySelector('#step-tab-2').dispatchEvent(new win.KeyboardEvent('keydown', {key: 'Home', bubbles: true}));
         if (doc.querySelector('#step-tab-0').getAttribute('aria-selected') !== 'true') errors.push('journey keyboard');
