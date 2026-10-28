@@ -1,0 +1,81 @@
+/* Six precise viewport crops from the supplied 1280 x 548 app overview. */
+.hero-brand-name {display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+.hero-brand-name strong {color:#fff;font-weight:650;}
+.hero-full-name {color:#d4d8e4;}
+.story-intro .eyebrow>span:first-child {margin:0;}
+.brand-symbol {--name-reveal:1;}
+.brand-expansion {display:flex;justify-content:center;align-items:baseline;gap:.28em;font-size:clamp(27px,3vw,38px);font-weight:550;letter-spacing:-.035em;color:var(--kp-color-ink);line-height:1.3;}
+.brand-expansion b {font-weight:650;color:var(--kp-color-blue);}
+.name-rest {display:inline-block;}
+.motion-enabled .name-rest {clip-path:inset(0 calc((1 - var(--name-reveal)) * 100%) 0 0);opacity:calc(.35 + var(--name-reveal) * .65);transform:translateY(calc((1 - var(--name-reveal)) * 8px));}
+.app-walkthrough .section-intro {max-width:760px;}
+.app-walkthrough .journey {display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start;}
+.journey-navigation {position:sticky;top:calc(var(--header) + 32px);}
+.app-walkthrough .journey-steps>button {padding:20px 0;gap:20px;min-height:76px;align-items:center;}
+.app-walkthrough .journey-steps strong,html[lang=en] .app-walkthrough .journey-steps strong {font-size:24px;line-height:1.3;}
+.app-walkthrough .journey-steps>button>span>span {display:none;}
+.app-walkthrough .step-number {font-size:17px;margin:0;color:inherit;}
+.app-walkthrough .journey-steps>button[aria-selected=true] {color:var(--kp-color-blue);}
+.app-walkthrough .journey-panel {padding:0;min-width:0;}
+.app-stage {display:grid;justify-items:center;gap:32px;}
+.app-phone {margin:0;width:min(100%,300px);padding:8px;background:#161619;border-radius:32px;box-shadow:0 20px 60px -30px #16264d66;}
+.app-screen-crop {position:relative;overflow:hidden;aspect-ratio:175 / 380;border-radius:25px;background:#f5f5f7;}
+.app-screen-crop img {position:absolute;max-width:none;width:731.428571%;height:auto;top:-38.684211%;left:var(--crop-x);display:block;}
+.crop-1 {--crop-x:-10.857143%;}
+.crop-2 {--crop-x:-132%;}
+.crop-3 {--crop-x:-253.714286%;}
+.crop-4 {--crop-x:-374.857143%;}
+.crop-5 {--crop-x:-496.571429%;}
+.crop-6 {--crop-x:-618.285714%;}
+.app-stage-caption {max-width:480px;}
+.app-stage-caption h3 {font-size:26px;line-height:1.35;margin-bottom:12px;}
+.app-stage-caption p {font-size:20px;line-height:1.7;color:var(--muted);}
+.app-step-controls {display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:32px;max-width:260px;}
+.app-step-controls button {width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--kp-color-line);background:#fff;border-radius:50%;font-size:24px;color:var(--kp-color-ink);transition:background var(--kp-motion-quick);}
+.app-step-controls button:hover:not(:disabled) {background:var(--kp-color-blue-soft);}
+.app-step-controls button:disabled {opacity:.35;cursor:default;}
+.app-step-counter {font-size:17px;font-weight:550;font-variant-numeric:tabular-nums;letter-spacing:.04em;}
+.app-walkthrough .journey-note {font-size:16px;line-height:1.6;text-align:left;max-width:360px;margin-top:24px;}
+.app-walkthrough .journey-sticky:after {display:none;}
+/* A complete phone and readable captions take precedence over pinning on short screens. */
+.motion-enabled .how-section.app-walkthrough {height:auto;padding:var(--kp-layout-section) 0;}
+.motion-enabled .app-walkthrough .journey-sticky {position:relative;top:auto;height:auto;padding:0;display:block;}
+.motion-enabled .app-walkthrough .section-heading {margin-bottom:48px;}
+.motion-enabled .app-walkthrough h2 {font-size:var(--type-heading);}
+.motion-enabled .app-walkthrough .journey {gap:64px;}
+@media (min-width:901px) and (min-height:1100px) {
+ .motion-enabled .how-section.app-walkthrough {height:340svh;padding:0;}
+ .motion-enabled .app-walkthrough .journey-sticky {position:sticky;top:var(--header);height:calc(100svh - var(--header));display:flex;flex-direction:column;justify-content:center;padding:28px 0;}
+ .motion-enabled .app-walkthrough .section-heading {margin-bottom:28px;}
+ .motion-enabled .app-walkthrough .journey {align-items:center;}
+ .motion-enabled .app-walkthrough .journey-navigation {position:static;}
+ .motion-enabled .app-walkthrough .app-phone {width:260px;}
+ .motion-enabled .app-walkthrough .app-stage {gap:20px;}
+}
+@media (max-width:900px) {
+ .app-walkthrough .journey,.motion-enabled .app-walkthrough .journey {gap:32px;}
+ .app-walkthrough .journey-steps strong,html[lang=en] .app-walkthrough .journey-steps strong {font-size:22px;}
+}
+@media (max-width:600px) {
+ .hero-brand-name {gap:7px 10px;}
+ .hero-brand-name>span[aria-hidden] {display:none;}
+ .hero-brand-name>[data-i18n=status] {width:100%;font-size:15px;color:#bfc1ce;}
+ .hero-brand-name strong,.hero-full-name {font-size:16px;}
+ .app-walkthrough .journey {grid-template-columns:1fr;}
+ .journey-navigation {position:static;}
+ .app-walkthrough .journey-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border:0;}
+ .app-walkthrough .journey-steps>button {display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;border:1px solid var(--kp-color-line);border-radius:12px;padding:12px;min-height:92px;}
+ .app-walkthrough .journey-steps strong,html[lang=en] .app-walkthrough .journey-steps strong {font-size:17px;line-height:1.35;}
+ .app-walkthrough .journey-steps>button[aria-selected=true] {border-color:var(--kp-color-blue);background:var(--kp-color-blue-soft);}
+ .app-walkthrough .step-number {font-size:15px;}
+ .app-step-controls {max-width:none;margin-top:20px;}
+ .app-walkthrough .journey-note {font-size:15px;max-width:none;margin-top:16px;}
+ .app-stage {gap:24px;}
+ .app-phone {width:min(100%,320px);}
+ .app-stage-caption h3 {font-size:24px;}
+ .app-stage-caption p {font-size:19px;}
+ .motion-enabled .app-walkthrough .section-heading {margin-bottom:32px;}
+ .brand-expansion {font-size:30px;}
+}
+@media (prefers-reduced-motion:reduce) {.name-rest{clip-path:none!important;opacity:1!important;transform:none!important}.app-step-controls button{transition:none}}
+@media print {.journey-navigation{position:static}.app-phone{box-shadow:none}.name-rest{clip-path:none!important;opacity:1!important;transform:none!important}}

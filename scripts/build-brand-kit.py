@@ -47,7 +47,7 @@ for variant, background, foreground, muted in [('dark', black, '#FFFFFF', '#BFC1
 <rect width="1200" height="630" fill="{background}"/>
 <g transform="translate(72 64) scale(.31)">{paths}</g>
 <text x="72" y="302" fill="{foreground}" font-family="Pretendard, Arial, sans-serif" font-size="76" font-weight="650" letter-spacing="-3">Prove what matters.</text>
-<text x="76" y="364" fill="{muted}" font-family="Pretendard, Arial, sans-serif" font-size="27">Korea + Proof. Privacy by design.</text>
+<text x="76" y="364" fill="{muted}" font-family="Pretendard, Arial, sans-serif" font-size="27">Korean Proof. Privacy by design.</text>
 <path d="M880 630C720 480 1050 430 1200 520" fill="none" stroke="#0047A0" stroke-width="3"/>
 <path d="M990 630C870 505 1110 490 1200 552" fill="none" stroke="#CD2E3A" stroke-width="3"/>
 <path d="M72 518H1128" stroke="{muted}" stroke-opacity=".35"/>
@@ -66,10 +66,10 @@ for relative in ['brand/guide.css', 'brand/guide.js', 'brand/README.txt', 'brand
     files[relative] = (ROOT / relative).read_bytes()
 for path in sorted(ASSETS.iterdir()):
     if path.is_file(): files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
-files['README.txt'] = 'KProof Brand Kit v1.0\n\nOpen brand/index.html in a browser.\nVector exports: brand/assets/\nDesign tokens: brand/tokens.json and css/tokens.css\nFont and SIL OFL license: assets/fonts/\nUsage notes: brand/README.txt\n'.encode()
+files['README.txt'] = 'KProof Brand Kit v1.1\n\nOpen brand/index.html in a browser.\nVector exports: brand/assets/\nDesign tokens: brand/tokens.json and css/tokens.css\nFont and SIL OFL license: assets/fonts/\nUsage notes: brand/README.txt\n'.encode()
 with zipfile.ZipFile(BRAND / 'kproof-brand-kit.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
     for name, content in sorted(files.items()):
-        info = zipfile.ZipInfo('KProof-Brand-Kit/' + name, (2026, 10, 27, 0, 0, 0))
+        info = zipfile.ZipInfo('KProof-Brand-Kit/' + name, (2026, 10, 28, 0, 0, 0))
         info.compress_type = zipfile.ZIP_DEFLATED
         archive.writestr(info, content)
 print(f'Built shared CSS tokens, {len(list(ASSETS.glob("*.svg")))} SVG exports and {len(files)} archive files.')

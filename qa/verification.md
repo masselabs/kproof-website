@@ -1,5 +1,16 @@
 # Verification - copy, identity and motion refinement, 2026-10-25
 
+## Korean Proof, larger type and app walkthrough, 2026-10-28
+
+- Made Korean Proof explicit in the hero, metadata, brand explanation and kit. Added a scroll reveal that expands K into Korean in the brand caption. Rebuilt the v1.1 kit with the larger shared type scale.
+- Replaced the generic result with the concrete 19-or-older example and explained that date of birth is not sent. Updated both product GitHub links to masselabs/kproof and removed the two requested notices in KO/EN.
+- Used the supplied Desktop/1.jpg unchanged as assets/app-flow.jpg. CSS crops expose its six app screens inside a phone frame; bilingual captions, tabs, keyboard selection and previous/next controls explain the flow. At 1280 x 548, the source has approximately 175 x 380 pixels per screen; enlarging it cannot restore original text detail.
+- Source checks passed with 151 matching bilingual keys, including image alternatives. Node motion, JavaScript syntax and Git whitespace checks passed. Verified that the supplied JPEG and repository asset have identical SHA-256 hashes; the rebuilt brand ZIP passed CRC checks.
+- Safari passed 10 layout/control groups: KO/EN at 360, 390, 768, 1024 and 1440px, all six app stages, boundary controls, keyboard selection, menus and FAQ, with no page overflow. Intentional image overflow inside the clipped screen viewport is excluded from overflow reporting.
+- Inspected the 390px hero and cropped app screen in native Safari and operated the app next-step control. Checked hero introduction/card and closing copy/control geometry at all five widths in both languages, at 900px viewport height. Fixed closing-copy overlap by anchoring it above the controls and moving the card upward during the final scene.
+- Browser layout checks used a temporary visible iframe with parent-window timer waits; geometry checks invoked the existing render function directly. Native animation-frame waits stall in this Safari session, so these checks do not certify the complete scroll scheduling/reduced-motion browser suite. Node checks verify name reveal and forward/reverse motion calculations. Short screens keep the app walkthrough in document flow; scroll pinning requires at least 901 x 1100px.
+- No hosting, domain, authentication or data-collection changes.
+
 ## Brand kit and shared website tokens, 2026-10-27
 
 - Added a Korean brand guide at `brand/index.html`: identity and clear space, minimum sizes, color roles, typography, layout/motion rules, voice, and downloadable assets. Homepage brand/footer links are translated in KO/EN.

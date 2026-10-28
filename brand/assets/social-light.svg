@@ -2,7 +2,7 @@
 <rect width="1200" height="630" fill="#FFFFFF"/>
 <g transform="translate(72 64) scale(.31)"><g fill="#0047A0"><g transform="translate(0)"><path d="M0 0H38V56L83 0H128L73 69L132 144H85L38 85V144H0Z"/><path class="mark-accent" fill="#CD2E3A" d="M38 56L83 0H128L73 69L38 85Z"/></g><g transform="translate(142)"><path fill-rule="evenodd" d="M0 0H61C96 0 116 20 116 53S96 106 61 106H38V144H0ZM38 34V72H58C71 72 78 66 78 53S71 34 58 34Z"/></g><g transform="translate(270)"><path fill-rule="evenodd" d="M0 0H61C96 0 116 20 116 53C116 75 106 90 89 98L125 144H80L54 106H38V144H0ZM38 34V72H58C71 72 78 66 78 53S71 34 58 34Z"/></g><g transform="translate(405)"><path fill-rule="evenodd" d="M64 0C105 0 128 27 128 72S105 144 64 144S0 117 0 72S23 0 64 0ZM64 34C46 34 38 48 38 72S46 110 64 110S90 96 90 72S82 34 64 34Z"/></g><g transform="translate(545)"><path fill-rule="evenodd" d="M64 0C105 0 128 27 128 72S105 144 64 144S0 117 0 72S23 0 64 0ZM64 34C46 34 38 48 38 72S46 110 64 110S90 96 90 72S82 34 64 34Z"/></g><g transform="translate(685)"><path d="M0 0H104V34H38V60H94V94H38V144H0Z"/></g></g></g>
 <text x="72" y="302" fill="#09090B" font-family="Pretendard, Arial, sans-serif" font-size="76" font-weight="650" letter-spacing="-3">Prove what matters.</text>
-<text x="76" y="364" fill="#62626E" font-family="Pretendard, Arial, sans-serif" font-size="27">Korea + Proof. Privacy by design.</text>
+<text x="76" y="364" fill="#62626E" font-family="Pretendard, Arial, sans-serif" font-size="27">Korean Proof. Privacy by design.</text>
 <path d="M880 630C720 480 1050 430 1200 520" fill="none" stroke="#0047A0" stroke-width="3"/>
 <path d="M990 630C870 505 1110 490 1200 552" fill="none" stroke="#CD2E3A" stroke-width="3"/>
 <path d="M72 518H1128" stroke="#62626E" stroke-opacity=".35"/>

@@ -19,6 +19,7 @@ export async function checkSite() {
         win.setLanguage(lang);
         await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
         const overflow = [...doc.querySelectorAll('body *')].filter(element => {
+          if (element.matches('.app-screen-crop img')) return false; // Intentionally clipped sprite source.
           const box = element.getBoundingClientRect();
           return box.width > 0 && (box.left < -1 || box.right > width + 1);
         }).map(element => element.className || element.tagName);
@@ -45,12 +46,19 @@ export async function checkSite() {
         win.setLanguage(lang);
         if (doc.querySelector('#proof-title').dataset.i18n !== 'proofEligibilityTitle' || doc.querySelector('#proof-title').textContent !== win.eval('translations')[lang].proofEligibilityTitle) errors.push('selected proof translation');
         doc.querySelector('#tab-age').click();
-        for (let step = 0; step < 3; step++) {
+        for (let step = 0; step < 6; step++) {
           doc.querySelector('#step-tab-' + step).click();
           if (doc.querySelectorAll('[data-step-screen]:not([hidden])').length !== 1 || doc.querySelector('[data-step-screen="' + step + '"]').hidden) errors.push('journey step ' + step);
         }
         doc.querySelector('#step-tab-2').dispatchEvent(new win.KeyboardEvent('keydown', {key: 'Home', bubbles: true}));
         if (doc.querySelector('#step-tab-0').getAttribute('aria-selected') !== 'true') errors.push('journey keyboard');
+        doc.querySelector('[data-step-next]').click();
+        if (doc.querySelector('#journey-panel').dataset.step !== '1') errors.push('next app screen');
+        doc.querySelector('[data-step-prev]').click();
+        if (doc.querySelector('#journey-panel').dataset.step !== '0' || !doc.querySelector('[data-step-prev]').disabled) errors.push('previous app screen boundary');
+        doc.querySelector('#step-tab-5').click();
+        if (!doc.querySelector('[data-step-next]').disabled) errors.push('last app screen boundary');
+        doc.querySelector('#step-tab-0').click();
         const summary = doc.querySelector('summary');
         summary.click();
         if (!summary.parentElement.open) errors.push('FAQ opening');
@@ -81,7 +89,7 @@ export async function checkSite() {
       const distance = section.offsetHeight - pinned.offsetHeight;
       if (win.getComputedStyle(pinned).position === 'sticky') {
         win.eval('journeyManualAt = null; journeyAutoStep = -1');
-        for (const [progress, step] of [[0, '0'], [.5, '1'], [.95, '2'], [0, '0']]) {
+        for (const [progress, step] of [[0, '0'], [.5, '3'], [.95, '5'], [0, '0']]) {
           win.scrollTo({top: start + distance * progress, behavior: 'instant'});
           win.dispatchEvent(new win.Event('scroll'));
           await new Promise(resolve => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));

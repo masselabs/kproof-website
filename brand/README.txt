@@ -1,11 +1,11 @@
-KProof Brand Kit — v1.0 / 2026-10-27
+KProof Brand Kit — v1.1 / 2026-10-28
 
 Start here
 Open brand/index.html in a browser. The guide works offline, including individual
 asset links. Automatic color copying depends on browser clipboard support.
 
 Identity
-The product name is KProof (Korea + Proof), pronounced 케이프루프.
+The product name is KProof (Korean Proof), pronounced 케이프루프.
 The custom vector wordmark reads KPROOF. Use K as the compact symbol.
 Do not redraw, stretch, re-space, rotate or recolor the supplied marks.
 Keep at least 1/4 of the mark's height clear on every side.

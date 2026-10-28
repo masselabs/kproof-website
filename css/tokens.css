@@ -33,24 +33,24 @@
   --kp-motion-blue-loop: 23s;
   --kp-layout-width: 1120px;
   --kp-layout-section: 144px;
-  --type-display: clamp(40px, 4.5vw, 64px);
-  --type-heading: clamp(34px, 3.8vw, 52px);
-  --type-subheading: clamp(22px, 2.1vw, 26px);
-  --type-lead: clamp(18px, 1.6vw, 22px);
-  --type-body: 17px;
-  --type-label: 14px;
-  --type-caption: 13px;
+  --type-display: clamp(44px, 4.8vw, 68px);
+  --type-heading: clamp(38px, 4vw, 56px);
+  --type-subheading: clamp(24px, 2.2vw, 28px);
+  --type-lead: clamp(21px, 1.8vw, 24px);
+  --type-body: 20px;
+  --type-label: 17px;
+  --type-caption: 16px;
 }
 @media (max-width: 900px) { :root { --kp-layout-section: 96px; } }
 @media (max-width: 600px) {
   :root {
     --kp-layout-section: 80px;
-    --type-display: clamp(30px, 8.2vw, 36px);
-    --type-heading: clamp(29px, 7.6vw, 34px);
-    --type-subheading: 22px;
-    --type-lead: 17px;
-    --type-body: 16px;
-    --type-label: 13px;
-    --type-caption: 12px;
+    --type-display: clamp(34px, 8.8vw, 40px);
+    --type-heading: clamp(32px, 8.2vw, 38px);
+    --type-subheading: 24px;
+    --type-lead: 20px;
+    --type-body: 18px;
+    --type-label: 16px;
+    --type-caption: 15px;
   }
 }

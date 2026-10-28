@@ -7,7 +7,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'js/app.js'), 'utf8');
 const data = vm.runInNewContext(js.split('const storageKey')[0] + '\n({translations, pendingUrls})');
 assert.deepEqual(Object.keys(data.translations.ko).sort(), Object.keys(data.translations.en).sort());
-for (const match of html.matchAll(/data-i18n(?:-aria)?="([^"]+)"/g)) {
+for (const match of html.matchAll(/data-i18n(?:-aria|-alt)?="([^"]+)"/g)) {
   for (const language of ['ko', 'en']) assert.ok(data.translations[language][match[1]], `Missing ${language}:${match[1]}`);
 }
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
