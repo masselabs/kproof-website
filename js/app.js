@@ -469,6 +469,8 @@ function setLanguage(next, announce = false) {
   document.querySelector('meta[property="og:title"]').content = copy.title;
   document.querySelector('meta[property="og:description"]').content = copy.description;
   document.querySelector('meta[property="og:locale"]').content = language === "ko" ? "ko_KR" : "en_US";
+  document.querySelector('meta[name="twitter:title"]').content = copy.title;
+  document.querySelector('meta[name="twitter:description"]').content = copy.description;
   menu.setAttribute("aria-label", copy[menu.getAttribute("aria-expanded") === "true" ? "menuClose" : "menuOpen"]);
   if (announce) {
     try { localStorage.setItem(storageKey, language); } catch { /* The current page still switches without persistence. */ }

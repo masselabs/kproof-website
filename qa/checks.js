@@ -27,7 +27,11 @@ export async function checkSite() {
         if (!doc.title.includes('KProof')) errors.push('title');
         if ([...doc.querySelectorAll('[data-i18n]')].some(e => !e.textContent.trim() || e.textContent.includes('undefined'))) errors.push('translation');
         if ([...doc.querySelectorAll('a[href^="#"]')].some(e => !doc.getElementById(e.hash.slice(1)))) errors.push('anchor');
-        if (doc.querySelector('a[href="#"],a[href=""],link[rel="canonical"]')) errors.push('placeholder link or invented canonical');
+        if (doc.querySelector('a[href="#"],a[href=""]')) errors.push('placeholder link');
+        if (doc.querySelector('link[rel="canonical"]')?.href !== 'https://koreanproof.com/') errors.push('canonical URL');
+        if (doc.querySelector('meta[property="og:image"]')?.content !== 'https://koreanproof.com/assets/og-image.png') errors.push('social image URL');
+        if (doc.querySelector('meta[name="twitter:title"]')?.content !== doc.title) errors.push('Twitter title translation');
+        if (doc.querySelector('meta[name="twitter:description"]')?.content !== doc.querySelector('meta[name="description"]').content) errors.push('Twitter description translation');
         if ([...doc.querySelectorAll('a[target="_blank"]')].some(e => !e.rel.includes('noopener') || !e.rel.includes('noreferrer'))) errors.push('external link rel');
         if ([...doc.querySelectorAll('[aria-disabled="true"]')].some(e => e.closest('a'))) errors.push('pending link is clickable');
         if (width <= 900) {
