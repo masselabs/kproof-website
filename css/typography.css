@@ -97,6 +97,8 @@ h2, .use-heading h2, .developer-top h2, .brand-explanation h2,
 .use-heading>p:last-child {color: #c7d2ed; max-width: 620px;}
 .route-origin, .route-destination {font-size: clamp(32px, 4.3vw, 60px);}
 .use-pills>span {font-size: 19px; font-weight: 550; color: #edf2ff; line-height: 1.5;}
+.use-pills>span {flex: 1 1 240px; min-width: 0;}
+.use-pills small {display: block; margin-top: 10px; font-size: var(--type-caption); font-weight: 430; line-height: 1.7; color: #c7d2ed;}
 .use-notes {font-size: var(--type-caption); color: #b4c2e1; line-height: 1.7;}
 .use-notes p+p {margin-top: 12px;}
 .symbol-caption {font-size: 16px; letter-spacing: .14em; color: #737382;}
