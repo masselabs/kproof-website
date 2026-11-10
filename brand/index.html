@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="guide.css">
+  <link rel="stylesheet" href="../css/link-actions.css">
   <script src="guide.js" defer></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQS5GPV9JL"></script>
@@ -25,7 +26,7 @@
 <header class="kit-header">
   <div class="wrap header-row">
     <a href="../index.html" class="home" aria-label="KProof 홈페이지로"><img src="assets/wordmark-color.svg" width="789" height="144" alt="KProof"></a>
-    <nav aria-label="브랜드 가이드 메뉴"><a href="#identity">로고</a><a href="#color">색상</a><a href="#downloads">다운로드 <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="브랜드 가이드 메뉴"><a href="#identity">로고</a><a href="#color">색상</a><a href="#downloads">다운로드</a></nav>
   </div>
 </header>
 <main id="main">
@@ -62,11 +63,11 @@
     <div class="wrap">
       <div class="section-heading"><p class="section-number">02 / Color</p><h2 id="color-title">한국의 색을, 절제된 비율로.</h2><p>흰색과 검정이 화면의 바탕을 만들고, 파랑이 주요 동작과 증명을 이끕니다. 빨강은 K의 획과 강조 지점에만 사용합니다.</p></div>
       <div class="palette">
-        <button type="button" class="swatch blue" data-copy="#0047A0" aria-label="KProof Blue 색상 코드 #0047A0 복사"><span>KProof Blue</span><span><b>#0047A0</b><small>RGB 0 · 71 · 160</small><i aria-hidden="true">복사 ↗</i></span></button>
-        <button type="button" class="swatch red" data-copy="#CD2E3A" aria-label="KProof Red 색상 코드 #CD2E3A 복사"><span>KProof Red</span><span><b>#CD2E3A</b><small>RGB 205 · 46 · 58</small><i aria-hidden="true">복사 ↗</i></span></button>
-        <button type="button" class="swatch black" data-copy="#09090B" aria-label="Black 색상 코드 #09090B 복사"><span>Black</span><span><b>#09090B</b><small>RGB 9 · 9 · 11</small><i aria-hidden="true">복사 ↗</i></span></button>
-        <button type="button" class="swatch white" data-copy="#FFFFFF" aria-label="White 색상 코드 #FFFFFF 복사"><span>White</span><span><b>#FFFFFF</b><small>RGB 255 · 255 · 255</small><i aria-hidden="true">복사 ↗</i></span></button>
-        <button type="button" class="swatch paper" data-copy="#F5F5F7" aria-label="Paper 색상 코드 #F5F5F7 복사"><span>Paper</span><span><b>#F5F5F7</b><small>RGB 245 · 245 · 247</small><i aria-hidden="true">복사 ↗</i></span></button>
+        <button type="button" class="swatch blue" data-copy="#0047A0" aria-label="KProof Blue 색상 코드 #0047A0 복사"><span>KProof Blue</span><span><b>#0047A0</b><small>RGB 0 · 71 · 160</small><i class="copy-label" aria-hidden="true"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>복사</i></span></button>
+        <button type="button" class="swatch red" data-copy="#CD2E3A" aria-label="KProof Red 색상 코드 #CD2E3A 복사"><span>KProof Red</span><span><b>#CD2E3A</b><small>RGB 205 · 46 · 58</small><i class="copy-label" aria-hidden="true"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>복사</i></span></button>
+        <button type="button" class="swatch black" data-copy="#09090B" aria-label="Black 색상 코드 #09090B 복사"><span>Black</span><span><b>#09090B</b><small>RGB 9 · 9 · 11</small><i class="copy-label" aria-hidden="true"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>복사</i></span></button>
+        <button type="button" class="swatch white" data-copy="#FFFFFF" aria-label="White 색상 코드 #FFFFFF 복사"><span>White</span><span><b>#FFFFFF</b><small>RGB 255 · 255 · 255</small><i class="copy-label" aria-hidden="true"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>복사</i></span></button>
+        <button type="button" class="swatch paper" data-copy="#F5F5F7" aria-label="Paper 색상 코드 #F5F5F7 복사"><span>Paper</span><span><b>#F5F5F7</b><small>RGB 245 · 245 · 247</small><i class="copy-label" aria-hidden="true"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>복사</i></span></button>
       </div>
       <div class="color-notes"><p><strong>본문</strong> Ink #161619 · 보조 문구 #62626E<br><strong>어두운 배경</strong> 본문 #FFFFFF · 보조 문구 #BFC1CE</p><p>상태를 색상만으로 구분하지 않습니다. 확인 결과에는 텍스트와 기호를 함께 표시합니다. 위 색상은 화면용 sRGB 기준이며, 인쇄 시에는 별도 교정이 필요합니다.</p></div>
       <p id="copy-status" class="copy-status" role="status" aria-live="polite">색상을 누르면 HEX 코드를 복사할 수 있습니다.</p>
@@ -103,6 +104,6 @@
     </div>
   </section>
 </main>
-<footer class="kit-footer"><div class="wrap"><a href="../index.html">홈페이지로 <span aria-hidden="true">↗</span></a><p>KProof · Masse Labs</p><a href="#top">맨 위로 ↑</a></div></footer>
+<footer class="kit-footer"><div class="wrap"><a class="action-link" href="../index.html"><svg class="action-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7M5 8.5V21h14V8.5M9 21v-8h6v8"/></svg><span class="action-label">홈페이지로</span></a><p>KProof · Masse Labs</p><a href="#top">맨 위로 ↑</a></div></footer>
 </body>
 </html>
