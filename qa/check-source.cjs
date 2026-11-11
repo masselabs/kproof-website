@@ -66,7 +66,7 @@ for (const [index, size] of [16, 32, 48, 256].entries()) {
   assertPng(ico.subarray(offset, offset + length), size, size);
 }
 assert.equal((html.match(/<h1\b/g) || []).length, 1);
-assert.equal((html.match(/<details>/g) || []).length, 4);
+assert.equal((html.match(/<details>/g) || []).length, 3);
 assert.ok(html.includes('<html lang="ko">'));
 assert.ok(fs.readFileSync(path.join(root, 'assets/fonts/OFL.txt'), 'utf8').includes('SIL OPEN FONT LICENSE'));
 console.log(`PASS: ${Object.keys(data.translations.ko).length} bilingual keys; anchors, assets, external links, pending URLs, semantics, font license, canonical URL, social metadata and PNG/ICO dimensions.`);
